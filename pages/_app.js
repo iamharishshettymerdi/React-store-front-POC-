@@ -10,11 +10,16 @@ import reportError from '../components/reportError'
 import useJssStyles from 'react-storefront/hooks/useJssStyles'
 import SessionProvider from 'react-storefront/session/SessionProvider'
 import useAppStore from 'react-storefront/hooks/useAppStore'
+import Banner from '../components/Banner'
 
 const styles = theme => ({
   main: {
     paddingTop: 3,
   },
+  navbar:{
+    color: 'white',
+    background: 'black'
+  }
 })
 
 const useStyles = makeStyles(styles)
@@ -36,8 +41,9 @@ export default function MyApp({ Component, pageProps }) {
       <SessionProvider url="/api/session">
         <MuiThemeProvider theme={theme}>
           <CssBaseline />
-          <Header menu={appData && appData.menu} />
-          <NavBar tabs={appData && appData.tabs} />
+          <Banner/>
+          {/* <Header menu={appData && appData.menu} /> */}
+          <NavBar tabs={appData && appData.tabs}/>
           <main className={classes.main}>
             <Component {...pageProps} />
           </main>

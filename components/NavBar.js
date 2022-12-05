@@ -18,18 +18,22 @@ const useStyles = makeStyles(theme => ({
       marginTop: 0,
     },
   },
+  navtab:{
+     backgroundColor:'black !important',
+     color:'red'
+  }
 }))
 
 function NavBar({ tabs }) {
   const classes = useStyles()
 
   return (
-    <Paper square elevation={2}>
+    <Paper square elevation={2} style={{color:'white',backgroundColor:'black'}}>
       <Container maxWidth="lg" className={classes.container}>
         <NavTabs>
           {tabs &&
             tabs.map(tab => (
-              <NavTab key={tab.as} href={tab.href} as={tab.as} label={tab.text} prefetch="visible">
+              <NavTab key={tab.as} href={tab.href} as={tab.as} label={tab.text} prefetch="visible" >
                 {tab.items && (
                   <div style={{ padding: 20 }}>
                     {tab.items.map(subcategory => (
