@@ -12,11 +12,15 @@ const useStyles = makeStyles(theme => ({
       display: 'flex',
       alignItems: 'center',
       backgroundColor:'rgb(192, 220, 241)',
+      maxwidth: '100%',
       marginLeft:'auto',
       marginRight:'auto',
       cursor:'pointer',
       height:'50px',
-      textDecoration:'underline'
+      '&:hover':{
+        textDecoration:'underline'
+      }
+
     },
     span:{
         width: '630px',
@@ -26,6 +30,7 @@ const useStyles = makeStyles(theme => ({
     }
   }))
 const Banner=(pageProps)=>{
+  console.log("Harish shetty banner props ",pageProps);
     const classes = useStyles()
     const [dialogenable,setdialogenable]=useState(false);
     return (

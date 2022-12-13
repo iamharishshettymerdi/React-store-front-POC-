@@ -1,0 +1,23 @@
+[
+    {
+        "id" : 7,
+        "header":"Stores & services",
+        "headerOption":"",
+        "icon" : "ArrowRight"
+       
+    },
+    {
+        "id" : 7,
+        "header":"Community",
+        "headerOption":"",
+        "icon" : "ArrowRight"
+       
+    },
+    {
+        "id" : 7,
+        "header":"Sign up",
+        "headerOption":"",
+        "icon" : "ArrowRight"
+       
+    }
+]
