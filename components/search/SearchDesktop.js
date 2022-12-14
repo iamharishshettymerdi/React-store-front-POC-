@@ -18,8 +18,8 @@ function SearchDesktop() {
   }, [popoverOpen])
 
   return (
-    <SearchForm>
-      <SearchField
+    <SearchForm >
+      <SearchField style={{borderRadius: '25px',width: '400px'}}    
         ref={inputRef}
         onChange={value => setQuery(value)}
         value={query}

@@ -1,0 +1,112 @@
+[
+   
+    {
+        "as":"/s/0",
+        "href":"/s/[...categorySlug]",
+        "text":"New",
+        "items":[
+            {
+                "as": "/s/1", "href":"/s/[...categorySlug]", "text": "All New"
+            },
+            {
+                "as": "/s/2", "href":"/s/[...categorySlug]", "text": "Just Dropped"
+            },
+            {
+                "as": "/s/3", "href":"/s/[...categorySlug]", "text": "New Makeup"
+            },
+            {
+                "as": "/s/4", "href":"/s/[...categorySlug]", "text": "New Skincare"
+            },
+            {
+                 "as": "/s/5", "href":"/s/[...categorySlug]", "text": "New Haircare"
+            },
+            {
+                "as": "/s/6", "href":"/s/[...categorySlug]", "text": "New Fragrance"
+            },
+            {
+                "as": "/s/7", "href":"/s/[...categorySlug]", "text": "New Bath & Body"
+            },
+            {
+                "as": "/s/8", "href":"/s/[...categorySlug]", "text": "New Tools & Brushes"
+            },
+            {
+                "as": "/s/9", "href":"/s/[...categorySlug]", "text": "The Next Big Thing"
+            }
+        ]
+       
+
+    },
+    {
+        "as":"/s/1",
+        "href":"/s/[...categorySlug]",
+        "text":"Brands",
+        "items":[
+            {
+                "as": "/s/10", "href":"/s/[...categorySlug]", "text": "Brands A-Z"
+            },
+            {
+                "as": "/s/11", "href":"/s/[...categorySlug]", "text": "SEPHORA COLLECTION"
+            }
+        ]
+    },
+    {
+        "as":"/s/2",
+        "href":"/s/[...categorySlug]",
+        "text":"Makeup",
+        "items":[]
+    },
+    {
+        "as":"/s/3",
+        "href":"/s/[...categorySlug]",
+        "text":"Skincare",
+        "items":[]
+    },
+    {
+        "as":"/s/4",
+        "href":"/s/[...categorySlug]",
+        "text":"Hair",
+        "items":[]
+    },
+    {
+        "as":"/s/5",
+        "href":"/s/[...categorySlug]",
+        "text":"Fragrance",
+        "items":[]
+    },
+    {
+        "as":"/s/6",
+        "href":"/s/[...categorySlug]",
+        "text":"Tools & Brashes",
+        "items":[]
+    },
+    {
+        "as":"/s/7",
+        "href":"/s/[...categorySlug]",
+        "text":"Bath & Body",
+        "items":[]
+    },
+    {
+        "as":"/s/8",
+        "href":"/s/[...categorySlug]",
+        "text":"Mini size",
+        "items":[]
+    },
+    {
+        "as":"/s/9",
+        "href":"/s/[...categorySlug]",
+        "text":"Gifts",
+        "items":[]
+    },
+    {
+        "as":"/s/10",
+        "href":"/s/[...categorySlug]",
+        "text":"Beauty under $20",
+        "items":[]
+    },
+    {
+        "as":"/s/11",
+        "href":"/s/[...categorySlug]",
+        "text":"Sales & Offers",
+        "items":[]
+    }
+]

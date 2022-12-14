@@ -13,7 +13,7 @@ function createTabs() {
     subcategories.push({
       as: "/s/".concat(i),
       href: '/s/[...categorySlug]',
-      text: "Subcategory ".concat(i)
+      text: "Subcategory hsb".concat(i)
     });
   }
   const users=["New","Brands","Makeup","Skincare","Hair","Fragrance","Tools & Brashes","Bath & Body","Mini size","Gifts","Beauty under $20","Sales & Offers"]
