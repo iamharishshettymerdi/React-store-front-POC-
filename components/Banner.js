@@ -30,11 +30,11 @@ const useStyles = makeStyles(theme => ({
     }
   }))
 const Banner=(pageProps)=>{
-  console.log("Harish shetty banner props ",pageProps);
     const classes = useStyles()
     const [dialogenable,setdialogenable]=useState(false);
     return (
-             <Container maxWidth="xl" className={classes.container} onClick={()=>{console.log("Clicked");setdialogenable(true)}}>
+      // onClick={()=>{console.log("Clicked");setdialogenable(true)}}
+             <Container maxWidth="xl" className={classes.container} >
                 <div className={classes.span}>Get FREE shipping on all orders when you join Beauty Insider. Exclusions/terms apply.† </div>
                     <Dialog open={dialogenable} onClose={()=>{"close ";setdialogenable(false)}}>Hello</Dialog>
             </Container>
