@@ -11,7 +11,8 @@ const useStyles = makeStyles(theme => ({
     container: {
       display: 'flex',
       alignItems: 'center',
-      backgroundColor:'rgb(192, 220, 241)',
+      backgroundColor:'rgb(18, 49, 114)',
+      color:'white',
       maxwidth: '100%',
       marginLeft:'auto',
       marginRight:'auto',

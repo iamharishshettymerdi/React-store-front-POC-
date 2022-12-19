@@ -16,6 +16,12 @@ import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import Box from 'react-storefront/Box';
 import headerdata from '.././local-json/headerdata.json'
 import { Button, Popover, Typography } from "@material-ui/core";
+import Divider from '@mui/material/Divider';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemText from '@mui/material/ListItemText';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import Paper from '@mui/material/Paper';
 
 console.log("json data ",headerdata);
 const useStyles = makeStyles(theme => ({
@@ -65,6 +71,15 @@ icon:{
 },
 popoverclass:{
   top: '114px'
+},
+spanclass:{
+  whiteSpace: 'pre-wrap',
+  overflowWrap: 'break-word',
+  display: 'block',
+  fontSize: '11px',
+  paddingBottom: '4px', 
+  marginBottom: '-4px',
+  color: 'rgb(102, 102, 102)'
 }
   
 }))
@@ -105,10 +120,10 @@ export default function Header({ menu }) {
         aria-owns={open ? 'mouse-over-popover' : undefined}
         aria-haspopup="true"
         onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose}
         >
             <Box className={classes.Headeroptioncontaier} >
-                <StorefrontOutlinedIcon className={classes.icon}/>{m.header}
+                <StorefrontOutlinedIcon className={classes.icon}/>{m.header}<br/>
+                <span className={classes.spanclass}><p>{m.headerbelowText}</p></span>
               </Box>
         </Typography>
 
@@ -138,17 +153,6 @@ export default function Header({ menu }) {
 
           </Box>
    */}
-         
-
-          
-
-         
-
-         
-
-        
-
-
           <MenuButton open={menuOpen} onClick={handleMenuButtonClick} />
         </Container>
       </AppBar>
@@ -182,7 +186,60 @@ export default function Header({ menu }) {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Typography sx={{ p: 1 }}>I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.I use Popover.</Typography>
+        <Typography style={{width:'300px'}} sx={{ p: 1 }}>
+          <Box style={{ justifyContent: 'center',
+                      paddingBottom: '8px',
+                      display: 'flex'}}><button style={{fontSize: '12px',
+                        padding: '0.25em 0.875em',
+                        minHeight: '32px',
+                        borderWidth: '2px',
+                        display: 'inline-flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        lineHeight: '1',
+                        borderColor: 'transparent',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        borderRadius: '99999px',
+                        appearance: 'none',
+                        color:' rgb(255, 255, 255)',
+                        backgroundColor: 'rgb(0, 0, 0)',
+                        transition: 'background-color 0.2s ease 0s',
+                        minWidth: '5.5em'}}>Choose Your Store</button></Box>
+
+<Paper sx={{ width: 320 }}>
+
+      <Box style={{backgroundColor:'#f6f6f8',padding:'3px'}}><span style={{background: 'white',
+    width: '94%',
+    height: '40px'}}><LocationOnOutlinedIcon/>Find a Sephora</span></Box>
+     
+  
+      <MenuList dense>
+
+      {headerdata.map(m=>(<b style={{padding: '15px'}}>{m.headermenuoptiontitle}</b>
+
+      ))}
+    
+
+        <MenuItem style={{padding:'15px'}}>
+          <ListItemText><span style={{display: 'flex'}}><img src='https://www.sephora.com/contentimages/meganav/icons/happening_services.jpg' width={55} height={60}/><p style={{margin: '10px'}}>Services</p><p>
+            </p><p className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>Personalized makeup,skincare and brow services</p></span></ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem style={{padding:'15px'}}>
+          <ListItemText><span style={{display: 'flex'}}><img src='https://www.sephora.com/contentimages/meganav/icons/happening_events_2.jpg' width={55} height={60}/> <p style={{margin: '10px'}}>Store Events</p>
+          <p  className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>Exciting launches ,parties and more !</p>
+          </span></ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem style={{padding:'15px'}}>
+          <ListItemText> <span style={{display: 'flex'}}><img src='https://www.sephora.com/contentimages/meganav/icons/happening_new.jpg' width={55} height={60}/> <p style={{margin: '10px'}}>What's New in Store</p>
+          <p  className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>Explore what's hot in your store</p>
+          </span></ListItemText>
+        </MenuItem>
+      </MenuList>
+    </Paper>
+        </Typography>
       </Popover>
     </>
   )

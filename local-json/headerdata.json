@@ -2,7 +2,28 @@
     {
         "id" : 7,
         "header":"Stores & services",
-        "headerOption":"",
+        "headerbelowText":"Choose your store",
+        "locationicon":"",
+        "Companyname":"Sephora",
+        "headermenuoptiontitle":"Happening at sephora",
+        "headerMenuOption":[
+            {
+                "headersuboption":"Services",
+                "icon":"https://www.sephora.com/contentimages/meganav/icons/happening_services.jpg",
+                "headersubtext":"Personalized makeup,skincare and brow services "
+            },
+            {
+                "headersuboption":"Store Events",
+                "icon":"https://www.sephora.com/contentimages/meganav/icons/happening_events_2.jpg",
+                "headersubtext":"Exciting launches parties & more "
+            },
+            {
+                "headersuboption":"What's New in Store",
+                "icon":"https://www.sephora.com/contentimages/meganav/icons/happening_new.jpg",
+                "headersubtext":"Explore What's hot in your place "
+            }
+          
+        ],
         "icon" : "ArrowRight"
        
     },
@@ -15,7 +36,7 @@
     },
     {
         "id" : 7,
-        "header":"Sign up",
+        "header":"Sign In",
         "headerOption":"",
         "icon" : "ArrowRight"
        

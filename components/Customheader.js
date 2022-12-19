@@ -1,144 +1,170 @@
-import { AppBar, Toolbar, Box } from "@material-ui/core";
-import Link from 'react-storefront/link/Link'
+import React, { useState, useCallback, useContext } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import AppBar from 'react-storefront/AppBar'
+import CartButton from 'react-storefront/CartButton'
+import Search from './search/Search'
 import Logo from '../components/assets/sephora.svg'
-import { makeStyles } from "@material-ui/styles";
-import Stack from '@mui/material/Stack';
-import React from "react";
-import Grid from '@mui/material/Grid';
-import Divider from '@mui/material/Divider';
-import IconButton from '@material-ui/core/IconButton'
-import StoreIcon from '@material-ui/icons/Store'
-import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined'
-import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutlined';
-import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded'
-import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-</svg>
+import { Container } from '@material-ui/core'
+// import Menu from 'react-storefront/menu/Menu'
+import MenuButton from 'react-storefront/menu/MenuButton'
+import Link from 'react-storefront/link/Link'
+import SessionContext from 'react-storefront/session/SessionContext'
+import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
+import ModeCommentOutlinedIcon from '@material-ui/icons/ModeCommentOutlined';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
+import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
+// import Box from 'react-storefront/Box';
+import headerdata from '.././local-json/headerdata.json'
+import { Button, Popover, Typography } from "@material-ui/core";
 
-import { padding } from "@mui/system";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
+import Popper from '@mui/material/Popper';
 
-export default function Header(pageProps) {
-
-  console.log('pageProps ',pageProps);
-  const styles=theme=>({
-    toolbar:{
-        color:'black',
-        backgroundColor:'white',
-        padding: '25px'
+console.log("json data ",headerdata);
+const useStyles = makeStyles(theme => ({
+  title: {},
+  con:{
+    position: 'relative',
+    marginTop:'50px'
+  },
+  logo: {
+    position: 'absolute',
+    left: 10,
+    top: 0,
+    [theme.breakpoints.down('xs')]: {
+      left: '50%',
+      top: 6,
+      marginLeft: -60,
     },
-    appbar:{
-        position:'relative'
+  },
+  toolbar: {
+    padding: 0,
+    margin: 0,
+  },
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    position: 'relative',
+    color:'black',
+    [theme.breakpoints.down('xs')]: {
+      padding: 5,
     },
-    logo: {
+  },
+ 
+  Headeroptioncontaier:{
+    "&:hover": {
+      cursor:'pointer',
+      textDecoration:'underline'
+    },
+    "&:hover $icon": {
+      color: 'red',
+      textDecoration: 'underline'
+  },
+  },
+ 
+icon:{
+  width: '2em',
+  cursor:'pointer'
+},
+popoverclass:{
+  top: '114px'
+}
   
-      },
+}))
 
-      iconContainer: {
-        "&:hover $icon": {
-            color: 'red',
-            textDecoration: 'underline'
-        },
-        padding:'0px'
-    },
-    icon: {
-        color: 'black',
-    },
-    belowtext:{
-      whiteSpace: 'pre-wrap',
-      overflowWrap: 'break-word',
-      maxWidth: '28ch',
-      display: 'block',
-      fontSize: '11px',
-      paddingBottom: '4px',
-      marginBottom: '-4px',
-      color: 'rgb(102, 102, 102)'
-    },
-    community:{
-      "&:hover $community": {
-        textDecoration: 'underline'
-    },
-    width: '130px',
-    
-    },
-  })
-  const useStyles = makeStyles(styles)
-
+export default function Header({ menu }) {
   const classes = useStyles()
-  console.log('use styles ',classes);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const displayDesktop = () => {
-    return <Toolbar  className={classes.toolbar}>
-                 <Grid container spacing={1}>
-                    <Grid item xs={6}>
-                    <Box >
-                            <Link href="/">
-                                <a>
-                                <Logo style={{ width: 120, height: 20 }} className={classes.logo} />
-                                </a>
-                            </Link>
-                    </Box>
-                    </Grid>
-                    <Grid item xs={6}>
-                    <Stack
-                      direction="row"
-                      divider={<Divider orientation="vertical" flexItem />}
-                      spacing={2}>
-                      <Box>
-                      <Grid container spacing={1}>
-                        <Grid item xs={7}>
-                          <IconButton
-                            classes={{
-                                root: classes.iconContainer
-                            }}>
-                            <StoreIcon className={classes.icon}/>
-                          </IconButton>
-                          Stores & Services
-                          <span className={classes.belowtext}>Choose your store</span>
-                        </Grid>
-                        <Grid item xs={5} className={classes.community}>
-                        <span ><IconButton
-                              classes={{
-                                  root: classes.iconContainer
-                              }}>
-                              <PeopleOutlinedIcon className={classes.icon}/>
-                            </IconButton>
-                            Community</span>
-                        </Grid>
-                      </Grid>
-                    </Box>
-                      <Box>
-                        Sign-In 
-                        {/* <span className={classes.belowtext}>Choose your store</span> */}
-                        <IconButton style={{ width: '70px'}}
-                              classes={{
-                                  root: classes.iconContainer
-                              }}>
-                              <ChatBubbleOutlineOutlinedIcon className={classes.icon}/>
-                            </IconButton>
-
-                            <IconButton style={{ width: '70px'}}
-                              classes={{
-                                  root: classes.iconContainer
-                              }}>
-                              <FavoriteBorderRoundedIcon className={classes.icon}/>
-                            </IconButton>
-                            <IconButton style={{ width: '70px'}}
-                              classes={{
-                                  root: classes.iconContainer
-                              }}>
-                              <ShoppingBasketOutlinedIcon className={classes.icon}/>
-                            </IconButton>
-                        </Box>
-                    </Stack>
-                    </Grid>
-                </Grid>
-            </Toolbar>;
+  const handleClick = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
   };
-  
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popper' : undefined;
   return (
-    <header>
-      <AppBar className={classes.appbar}>{displayDesktop()}</AppBar>
-    </header>
-  );
+    <>
+      <AppBar style={{marginTop:'50px'}}>
+        <Container maxWidth="lg" className={classes.container}>
+          <Link href="/">
+            <a>
+              <Logo style={{ width: 120, height: 48 ,position:'relative'}} className={classes.logo} />
+            </a>
+          </Link>
+          <Search className="search1"/>
+
+          {headerdata.map(m=>(
+            <Box className={classes.Headeroptioncontaier} >
+                <StorefrontOutlinedIcon className={classes.icon}/>{m.header}
+              </Box>
+          ))}
+
+    <ModeCommentOutlinedIcon className={classes.icon}/>
+    <FavoriteBorderOutlinedIcon className={classes.icon}/>
+    <LocalMallOutlinedIcon className={classes.icon}/>
+   
+  {/* <Box >
+    <Box className={classes.Headeroptioncontaier} >
+      <StorefrontOutlinedIcon className={classes.icon}/>Stores & services 
+    </Box>
+    
+
+    <Box className={classes.Headeroptioncontaier}>
+      <PeopleOutlinedIcon className={classes.icon}/>Community
+    </Box>
+
+    <Box className={classes.Headeroptioncontaier}>
+      <FaceOutlinedIcon className={classes.icon}/>Sign up 
+    </Box>
+
+    <ModeCommentOutlinedIcon className={classes.icon}/>
+    <FavoriteBorderOutlinedIcon className={classes.icon}/>
+    <LocalMallOutlinedIcon className={classes.icon}/>
+
+  </Box>
+*/}
+ <button aria-describedby={id} type="button" onMouseEnter={handleClick}>
+        Toggle Popper
+      </button>
+
+      <Popper  id={id} open={open} anchorEl={anchorEl}
+  placement="bottom"
+  disablePortal={false}
+  modifiers={[
+    {
+      name: 'flip',
+      enabled: true,
+      options: {
+        altBoundary: true,
+        rootBoundary: 'document',
+        padding: 8,
+      },
+    },
+    {
+      name: 'preventOverflow',
+      enabled: true,
+      options: {
+        altAxis: true,
+        altBoundary: true,
+        tether: true,
+        rootBoundary: 'document',
+        padding: 8,
+      },
+    },
+    {
+      name: 'arrow',
+      enabled: true
+    },
+  ]}
+>
+<Box sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+          The content of the Popper.
+        </Box> </Popper>
+
+        </Container>
+        </AppBar>
+    </>
+  )
 }

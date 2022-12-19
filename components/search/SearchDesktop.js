@@ -17,16 +17,39 @@ function SearchDesktop() {
     }
   }, [popoverOpen])
 
+
+  const searchtextchangefunc=(value)=>{
+
+    console.log("value ",value)
+    setQuery(value)
+
+   
+    if(query.length<2)
+    {
+      setPopoverOpen(false);
+    }
+    else
+    {
+      setPopoverOpen(true);
+    }
+
+  }
   return (
     <SearchForm >
-      <SearchField style={{borderRadius: '25px',width: '400px'}}    
+      <SearchField id="textboxid" style={{borderRadius: '25px',width: '400px',background:' #f6f6f8', 
+    border: 'none', backgroundImage: 'url("https://cdn-icons-png.flaticon.com/512/2811/2811790.png")',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'left',backgroundSize: '24px 20px',
+    textIndent: '8px'}}    
         ref={inputRef}
-        onChange={value => setQuery(value)}
+        onChange={(value)=>{searchtextchangefunc(value)}}
+        onFocus={()=>{ document.getElementById('textboxid').style.backgroundImage='none';}}
+        onBlur={()=>{document.getElementById('textboxid').style.backgroundImage='url("https://cdn-icons-png.flaticon.com/512/2811/2811790.png")';}}
         value={query}
-        onFocus={() => setPopoverOpen(true)}
         submitButtonVariant="none"
         showClearButton={false}
       />
+      {/* <input type="text" id="search" name="search" onchange="hideIcon(this);" value="search" /> */}
       <SearchProvider query={query} active={activeRef.current}>
         <SearchPopover
           open={popoverOpen}
