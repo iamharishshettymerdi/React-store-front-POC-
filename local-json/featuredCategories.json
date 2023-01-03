@@ -1,0 +1,34 @@
+[
+    {
+        "name":"Gifts & Value Sets",
+        "image":"https://www.sephora.com/contentimages/homepage/092022/Homepage/RWD/gifts%2032@3x.png?imwidth=53"
+    },
+    {
+        "name":"Luxury Skincare",
+        "image":"https://www.sephora.com/contentimages/categorybanners/RWD/icons/luxury_beauty.svg"
+    },
+    {
+        "name":"Makeup Under $25",
+        "image":"https://www.sephora.com/contentimages/homepage/100422/Homepage/RWD/under25%2032@3x.jpg?imwidth=53"
+    },
+    {
+        "name":"Moisturizers",
+        "image":"https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/CategoryTiles/homepage_featured_category_tile_skincare_cleanser_moisturizer_us_ca_rwd_slice.jpg?imwidth=53"
+    },
+    {
+        "name":"Hair Styling & Treatments",
+        "image":"https://www.sephora.com/contentimages/homepage/091322/Homepage/RWD/hair%20dryer.JPG?imwidth=53"
+    },
+    {
+        "name":"Perfume",
+        "image":"https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/CategoryTiles/homepage_featured_category_tile_fragrance_bottle_us_ca_rwd_slice.jpg?imwidth=53"
+    },
+    {
+        "name":"Sephora Collection",
+        "image":"https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/CategoryTiles/homepage_featured_category_tile_sephoracollection_SC_us_ca_rwd_slice.jpg?imwidth=53"
+    },
+    {
+        "name":"Jumbos",
+        "image":"https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/CategoryTiles/homepage_featured_category_tile_samples_32_us_ca_rwd_slice.png?imwidth=53"
+    }
+]

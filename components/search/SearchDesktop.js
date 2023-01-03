@@ -40,7 +40,7 @@ function SearchDesktop() {
     border: 'none', backgroundImage: 'url("https://cdn-icons-png.flaticon.com/512/2811/2811790.png")',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'left',backgroundSize: '24px 20px',
-    textIndent: '8px'}}    
+    textIndent: '8px',zIndex: 'auto'}}    
         ref={inputRef}
         onChange={(value)=>{searchtextchangefunc(value)}}
         onFocus={()=>{ document.getElementById('textboxid').style.backgroundImage='none';}}

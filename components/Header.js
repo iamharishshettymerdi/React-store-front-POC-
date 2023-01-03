@@ -26,34 +26,14 @@ import Paper from '@mui/material/Paper';
 console.log("json data ",headerdata);
 const useStyles = makeStyles(theme => ({
   title: {},
-  con:{
-    position: 'relative',
-    marginTop:'50px'
+  flexcontainer:{
+      display: 'flex',
+      flexWrap: 'wrap',
+      textAlign: 'center',
+      width: '86%',
+      margin: 'auto',
+      padding: '10px'
   },
-  logo: {
-    position: 'absolute',
-    left: 10,
-    top: 0,
-    [theme.breakpoints.down('xs')]: {
-      left: '50%',
-      top: 6,
-      marginLeft: -60,
-    },
-  },
-  toolbar: {
-    padding: 0,
-    margin: 0,
-  },
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-    position: 'relative',
-    color:'black',
-    [theme.breakpoints.down('xs')]: {
-      padding: 5,
-    },
-  },
- 
   Headeroptioncontaier:{
     "&:hover": {
       cursor:'pointer',
@@ -62,27 +42,13 @@ const useStyles = makeStyles(theme => ({
     "&:hover $icon": {
       color: 'red',
       textDecoration: 'underline'
+  }},
+  icon:{
+    width: '2em',
+    cursor:'pointer'
   },
-  },
- 
-icon:{
-  width: '2em',
-  cursor:'pointer'
-},
-popoverclass:{
-  top: '114px'
-},
-spanclass:{
-  whiteSpace: 'pre-wrap',
-  overflowWrap: 'break-word',
-  display: 'block',
-  fontSize: '11px',
-  paddingBottom: '4px', 
-  marginBottom: '-4px',
-  color: 'rgb(102, 102, 102)'
-}
   
-}))
+  }))
 
 export default function Header({ menu }) {
   const classes = useStyles()
@@ -90,9 +56,7 @@ export default function Header({ menu }) {
   const handleMenuClose = useCallback(() => setMenuOpen(false), [])
   const handleMenuButtonClick = useCallback(() => setMenuOpen(menuOpen => !menuOpen), [])
   const { session } = useContext(SessionContext)
-
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -104,69 +68,40 @@ export default function Header({ menu }) {
 
   return (
     <>
-      <AppBar style={{marginTop:'50px'}}>
-        <Container maxWidth="lg" className={classes.container}>
-          <Link href="/">
-            <a>
-              <Logo style={{ width: 120, height: 48 ,position:'relative'}} className={classes.logo} />
-            </a>
-          </Link>
+      <div className={classes.flexcontainer}>
+          <div class="flex-item-left" style={{display: 'inline-flex'}}>
+            <div id="image">
+              <Link href="/">
+                <a>
+                  <Logo style={{ width: 120, height: 48 ,position:'relative'}} />
+                </a>
+              </Link>
+            </div>
+            <div id="textbox" className={classes.textbox}>
+                <Search className="search1"/>
+            </div>
+          </div>
+        <div className="flex-item-right">
+            <div class="cards">
+            {headerdata.map((m)=>(
+            <div className="card cardcontainer"  aria-owns={open ? 'mouse-over-popover' : undefined}
+            aria-haspopup="true"
+            onMouseEnter={handlePopoverOpen}>
+              <Box className={classes.Headeroptioncontaier}  >
+                  <StorefrontOutlinedIcon className={classes.icon} />{m.header}<br/>
+                </Box>
+            </div>            
+            ))}
+            <div className="cards" style={{margin: '15px'}}>
+              <ModeCommentOutlinedIcon className={classes.icon}/>
+              <FavoriteBorderOutlinedIcon className={classes.icon}/>
+              <LocalMallOutlinedIcon className={classes.icon}/>
+            </div>
+            </div>
+        </div>
+      </div>
 
-          <Search className="search1"/>
-          {/* <CartButton quantity={get(session, 'itemsInCart')} /> */}
-          {headerdata.map(m=>(
 
-        <Typography
-        aria-owns={open ? 'mouse-over-popover' : undefined}
-        aria-haspopup="true"
-        onMouseEnter={handlePopoverOpen}
-        >
-            <Box className={classes.Headeroptioncontaier} >
-                <StorefrontOutlinedIcon className={classes.icon}/>{m.header}<br/>
-                <span className={classes.spanclass}><p>{m.headerbelowText}</p></span>
-              </Box>
-        </Typography>
-
-              
-          ))}
-          <ModeCommentOutlinedIcon className={classes.icon}/>
-          <FavoriteBorderOutlinedIcon className={classes.icon}/>
-          <LocalMallOutlinedIcon className={classes.icon}/>
-
-          {/* <Box >
-            <Box className={classes.Headeroptioncontaier} >
-              <StorefrontOutlinedIcon className={classes.icon}/>Stores & services 
-            </Box>
-            
-
-            <Box className={classes.Headeroptioncontaier}>
-              <PeopleOutlinedIcon className={classes.icon}/>Community
-            </Box>
-
-            <Box className={classes.Headeroptioncontaier}>
-              <FaceOutlinedIcon className={classes.icon}/>Sign up 
-            </Box>
-
-            <ModeCommentOutlinedIcon className={classes.icon}/>
-            <FavoriteBorderOutlinedIcon className={classes.icon}/>
-            <LocalMallOutlinedIcon className={classes.icon}/>
-
-          </Box>
-   */}
-          <MenuButton open={menuOpen} onClick={handleMenuButtonClick} />
-        </Container>
-      </AppBar>
-      <Menu
-        anchor="right"
-        root={menu}
-        open={menuOpen}
-        onClose={handleMenuClose}
-        // renderItem={item => <div>{item.text} (custom)</div>}
-        // renderItemContent={item => <div>{item.text} (custom content)</div>}
-        // renderBack={item => <div>{item.text} back</div>}
-        // renderHeader={item => <div>{item.text} header</div>}
-        // renderFooter={item => <div>{item.text} footer</div>}
-      />
       <Popover style={{top: '20px'}}
         id="mouse-over-popover"
         sx={{
@@ -208,35 +143,25 @@ export default function Header({ menu }) {
                         minWidth: '5.5em'}}>Choose Your Store</button></Box>
 
 <Paper sx={{ width: 320 }}>
-
       <Box style={{backgroundColor:'#f6f6f8',padding:'3px'}}><span style={{background: 'white',
-    width: '94%',
-    height: '40px'}}><LocationOnOutlinedIcon/>Find a Sephora</span></Box>
-     
-  
+        width: '94%',
+        height: '40px'}}>
+      <LocationOnOutlinedIcon/>Find a Sephora</span></Box>
       <MenuList dense>
-
-      {headerdata.map(m=>(<b style={{padding: '15px'}}>{m.headermenuoptiontitle}</b>
-
+      {headerdata.map((m,index)=>(
+      <div>
+          <b style={{padding: '15px'}}>{m.headermenuoptiontitle}</b>
+          {headerdata[index].headerMenuOption?.map((n,index)=>(
+             <div>
+             <MenuItem style={{padding:'15px'}}>
+             <ListItemText><span style={{display: 'flex'}}><img src={n.icon} width={55} height={60}/><p style={{margin: '10px'}}>{n.headersuboption}</p><p>
+               </p><p className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>{n.headersubtext}</p></span></ListItemText>
+           </MenuItem>
+           {headerdata[0].headerMenuOption.length-1!=index?<Divider />:''}
+           </div>
+          ))}
+      </div>
       ))}
-    
-
-        <MenuItem style={{padding:'15px'}}>
-          <ListItemText><span style={{display: 'flex'}}><img src='https://www.sephora.com/contentimages/meganav/icons/happening_services.jpg' width={55} height={60}/><p style={{margin: '10px'}}>Services</p><p>
-            </p><p className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>Personalized makeup,skincare and brow services</p></span></ListItemText>
-        </MenuItem>
-        <Divider />
-        <MenuItem style={{padding:'15px'}}>
-          <ListItemText><span style={{display: 'flex'}}><img src='https://www.sephora.com/contentimages/meganav/icons/happening_events_2.jpg' width={55} height={60}/> <p style={{margin: '10px'}}>Store Events</p>
-          <p  className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>Exciting launches ,parties and more !</p>
-          </span></ListItemText>
-        </MenuItem>
-        <Divider />
-        <MenuItem style={{padding:'15px'}}>
-          <ListItemText> <span style={{display: 'flex'}}><img src='https://www.sephora.com/contentimages/meganav/icons/happening_new.jpg' width={55} height={60}/> <p style={{margin: '10px'}}>What's New in Store</p>
-          <p  className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>Explore what's hot in your store</p>
-          </span></ListItemText>
-        </MenuItem>
       </MenuList>
     </Paper>
         </Typography>

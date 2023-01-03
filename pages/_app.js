@@ -11,7 +11,9 @@ import useJssStyles from 'react-storefront/hooks/useJssStyles'
 import SessionProvider from 'react-storefront/session/SessionProvider'
 import useAppStore from 'react-storefront/hooks/useAppStore'
 import Banner from '../components/Banner'
+import Corousel from '../components/custom components/carouselBanner'
 // import Header from '../components/customheader'
+import '../components/custom components/corousal.css'
 
 const styles = theme => ({
   main: {
@@ -30,6 +32,8 @@ export default function MyApp({ Component, pageProps }) {
   const classes = useStyles()
   const [appData] = useAppStore(pageProps || {})
 
+  console.log("Existing Props ",pageProps)
+  console.log("Component Value ",Component)
   return (
     <PWA errorReporter={reportError}>
       <Head>
@@ -47,11 +51,12 @@ export default function MyApp({ Component, pageProps }) {
           <Header menu={appData && appData.menu} /> 
           <NavBar tabs={appData && appData.tabs}/>
           <main className={classes.main}>
+  
             <Component {...pageProps} />
           </main>
         </MuiThemeProvider>
       </SessionProvider>
-    </PWA>
+    </PWA> 
   )
 }
 

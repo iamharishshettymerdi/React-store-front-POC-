@@ -19,10 +19,29 @@ const useStyles = makeStyles(theme => ({
     '&:first-child': {
       marginTop: 0,
     },
+    textDecoration:'none',
+    color:'black',
+    fontWeight: '600',
+    '&:hover':{
+      textDecoration:'underline'
+    }
   },
   navtab:{
      backgroundColor:'black !important',
      color:'red'
+  },
+  flexcontainer:{
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 20 ,left: '0px', width: '1310px'
+  },
+  flexitemleft:{
+    padding: '10px',
+    flex: '50%',
+  },
+  flexitemright :{
+    padding: '10px',
+    flex: '50%'
   }
 }))
 
@@ -37,17 +56,24 @@ function NavBar({ tabs }) {
             category.map(tab => (
               <NavTab key={tab.as} href={tab.href} as={tab.as} label={tab.text} prefetch="visible" >
                 {tab.items.length>0 && (
-                  <div style={{ padding: 20 ,left: '0px'}}>
-                    {tab.items.map(subcategory => (
-                      <Link
-                        href={subcategory.href}
-                        key={subcategory.as}
-                        as={subcategory.as}
-                        className={classes.link}
-                      >
-                        {subcategory.text}
-                      </Link>
-                    ))}
+                  <div className={classes.flexcontainer} >
+
+                    <div class={classes.flexitemleft}>
+                       {tab.items.map(subcategory => (
+                          <Link
+                            href={subcategory.href}
+                            key={subcategory.as}
+                            as={subcategory.as}
+                            className={classes.link}
+                          >
+                            {subcategory.text}
+                          </Link>
+                        ))}
+                    </div>
+
+                    <div className={classes.flexitemright}>
+                          2
+                    </div>
                   </div>
                 )}
               </NavTab>
