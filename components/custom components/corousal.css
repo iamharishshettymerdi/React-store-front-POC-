@@ -89,8 +89,16 @@ div#carousel {
   }
 
   .react-multiple-carousel__arrow--right {
+    z-index: auto;
     right: calc(0% + 0px);
 }
 .react-multiple-carousel__arrow--left {
+  z-index: auto;
   left: calc(0% + 0px);
+}
+
+@media (max-width: 800px) {
+  .flexcontainer {
+    flex-direction: column;
+  }
 }

@@ -15,6 +15,8 @@ const useStyles = makeStyles(theme => ({
   productImage: {
     maxWidth: "100%",
     objectFit: "contain",
+    width: '170px'
+    
 },
 Image: {
     textAlign: 'center',
@@ -27,6 +29,7 @@ card:{
     transitionDuration: "10s",
     transform : "0.2s ease 0s",
     minHeight: '250px',
+    padding: '16px'
     // '&:hover':{
     //     margin: "16px",
     // }
