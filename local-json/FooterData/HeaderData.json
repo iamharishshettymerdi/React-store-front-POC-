@@ -1,0 +1,34 @@
+[
+    {
+      "icon": "https://www.sephora.com/img/ufe/icons/find-store.svg",
+      "title": "Find a Store",
+      "description": "Choose your store",
+      "url":"/happening/stores/sephora-near-me"
+    },
+    {
+      "icon":
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6vLw1SAN1nKIiHws_NRtCWwm6pQ0MrHt4g&usqp=CAU",
+      "title": "Live Beauty App",
+      "description": "Available",
+      "url":""
+    },
+    {
+      "icon": "https://www.sephora.com/img/ufe/icons/app.svg",
+      "title": "Get the App",
+      "description": "Text 'APP' to 36681",
+      "url":"/beauty/app"
+    },
+    {
+      "icon": "https://www.sephora.com/img/ufe/icons/sms-ko.svg",
+      "title": "Get Sephora Text Alerts",
+      "description": "Sign Up",
+      "url":"/beauty/text-alerts"
+    },
+    {
+      "icon": "https://www.sephora.com/img/ufe/icons/cc-outline-ko.svg",
+      "title": "Sephora Credit Card Program",
+      "description": "Want 25% off your Sephora Purchase?Details ",
+      "url":"/creditcards"
+    }
+    
+  ]
