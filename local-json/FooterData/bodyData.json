@@ -1,0 +1,88 @@
+[
+  {
+    "title": "About Sephora",
+    "items": [
+      { "data": "About Sephora", "url": "https://www.inside-sephora.com/en/about-sephora" },
+      { "data": "Newsroom", "url": "https://newsroom.sephora.com/" },
+      { "data": "Careers", "url": "https://www.inside-sephora.com/en/usa/join-us" },
+      { "data": "Sephora Values", "url": "https://www.inside-sephora.com/en/usa/life-at-sephora" },
+      {
+        "data": "Supply Chain Transparency",
+        "url": "https://www.sephora.com/beauty/supply-chain-transparency"
+      },
+      { "data": "Affilates", "url": "https://www.sephora.com/beauty/affiliates" },
+      { "data": "Sephora Events", "url": "https://www.sephora-events.com/" },
+      { "data": "Gift Cards", "url": "https://www.sephora.com/beauty/giftcards" },
+      {
+        "data": "Sephora Global Sites",
+        "url": "https://www.sephora.com/beauty/international-websites"
+      },
+      {
+        "data": "Diversity,Equity & inclusion",
+        "url": "https://www.inside-sephora.com/en/usa/diversity-equity-inclusion"
+      },
+      {
+        "data": "Checkout on Instagram",
+        "url": "https://www.sephora.com/beauty/instagram-checkout"
+      },
+      { "data": "Sephora Accelerate", "url": "https://sephoraaccelerate.com/" },
+      {
+        "data": "Report a Vulnerability",
+        "url": "https://www.sephora.com/beauty/vulnerability-disclosure-program"
+      }
+    ]
+  },
+  {
+    "title": "My sephora",
+    "items": [
+      { "data": "Beauty Insider", "url": "https://www.sephora.com/profile/BeautyInsider" },
+      { "data": "Sephora Credit Card", "url": "https://www.sephora.com/creditcard" },
+      { "data": "Community Profile", "url": "https://www.sephora.com/profile/me" },
+      { "data": "Order Status", "url": "https://www.sephora.com/beauty/order-status" },
+      { "data": "Purchase History", "url": "https://www.sephora.com/purchase-history" },
+      { "data": "Account Settings", "url": "https://www.sephora.com/profile/MyAccount" },
+      {
+        "data": "Beauty Adivsor Recommendations",
+        "url": "https://www.sephora.com/in-store-services"
+      },
+      { "data": "Beauty Offers", "url": "https://www.sephora.com/beauty/beauty-offers" },
+      {
+        "data": "Quizzes & Buying Guides",
+        "url": "https://www.sephora.com/beauty/best-beauty-products"
+      },
+      { "data": "Rewards Bazza", "url": "https://www.sephora.com/rewards" },
+      { "data": "Loves", "url": "https://www.sephora.com/shopping-list" },
+      { "data": "Book a Reservation", "url": "https://www.sephora.com/happening/home" }
+    ]
+  },
+  {
+    "title": "Help",
+    "items": [
+      { "data": "Customer Service", "url": "https://www.sephora.com/beauty/customer-service" },
+      { "data": "Returns & Exchanges", "url": "https://www.sephora.com/beauty/returns-exchanges" },
+      {
+        "data": "Delivery and Pickup Options",
+        "url": "https://www.sephora.com/beauty/pick-up-delivery-options"
+      },
+      { "data": "Shipping", "url": "https://www.sephora.com/beauty/shipping-information" },
+      { "data": "Billing", "url": "https://www.sephora.com/beauty/billing" },
+      {
+        "data": "International Shipments",
+        "url": "https://www.sephora.com/beauty/shipping-information"
+      },
+      {
+        "data": "Beauty Services FAQ",
+        "url": "https://www.sephora.com/beauty/beauty-services-faq"
+      },
+      { "data": "Sephora at  Kohls", "url": "https://www.sephora.com/beauty/sephora-at-kohls-faq" },
+      { "data": "Sephora Inside JCPenny", "url": "https://www.sephora.com/beauty/jcpenney" },
+      {
+        "data": "Store Locations",
+        "url": "https://www.sephora.com/happening/stores/sephora-near-me"
+      },
+      { "data": "Online Ordering", "url": "https://www.sephora.com/beauty/customer-service" },
+      { "data": "Klarna & Afterpay", "url": "https://www.sephora.com/beauty/flexible-payments" },
+      { "data": "Accessilbilty", "url": "https://www.sephora.com/beauty/accessibility" }
+    ]
+  }
+]
