@@ -1,0 +1,109 @@
+[
+  {
+    "card": "offer",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/December/2022-sale-on-sale-eoy-sale-site-desktop-mobile-app-beauty-offers-banner-page-us-can-final.jpg?imwidth=240",
+    "title": "Extra 20% off Sale Items",
+    "description": "Save on sale items in store and  online with code EXTRA20OFF",
+    "available": "Beauty Insider members only",
+    "details": "In store & online Ends 1/2/2023",
+    "policy": "++Exclusions/terms apply",
+    "buttonText":"Shop Now",
+    "url1":"https://www.sephora.com/sale?icid2=homepage_offerbanner_multi-world_program_saleonsale2022_us_rwd_promo_122622_cta&keyword=sale",
+    "url2":"https://www.sephora.com/beauty/holiday-sale",
+    "date":"01-12-2023"
+  },
+  {
+    "card": "offer",
+    "image": "https://www.sephora.com/contentimages/promo/freeship2021/2022-08-01-free-ship-site-beauty-offers-page-banner-us-can-final.jpg?imwidth=240",
+    "title": "Beauty Insiders Get Free Shipping",
+    "description": "Its' fast,reliable and appiles to every order.",
+    "available": "No code needed.Not a Beauty Insider member?",
+    "details": "Beauty Insider member only?",
+    "policy": "++Exclusions/terms apply",
+    "buttonText":"Join Here",
+    "url1":"https://www.sephora.com/profile/BeautyInsider?icid2=homepage_freeship_us_112122_cta",
+    "url2":"https://www.sephora.com/beauty/pick-up-delivery-options?activeTab=conveniencehub_lp_freeshipping_autoreplen_d_tab_ufe",
+    "date":""
+  },
+  {
+    "card": "compliment",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/December/2022-12-10-peace-out-day-dots-site-desktop-mobile-app-beauty-offers-page-banner-en-us-can.jpg?imwidth=240",
+    "title": "FREE Living Proof Trial Size",
+    "description": "Boost strength and shine with the Triple Bond Complex Leave-In Hair Treatment.",
+    "available": "Free with $25 purchase.",
+    "details": "Beauty Insider member only",
+    "store": "Online only",
+    "policy": "++Exclusions/terms apply"
+  },
+  {
+    "card": "compliment",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/December/2022-12-08-WATCH-YA-TONE-DLX-SAMPLE-site-beauty-offers-banner-1000x750.jpg?imwidth=240",
+    "title": "FREE FENTY SKIN Trial Size",
+    "description": "Visibly even skin tone with the new Watch Ya Tone 5% Niacianmide Dark Spot Serum with Vitamin C.",
+    "available": "Free with $25 purchase.",
+    "details": "Beauty Insider member only",
+    "store": "Online only",
+    "policy": "++Exclusions/terms apply"
+  },
+  {
+    "card": "compliment",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/December/2022-12-16-skincare-challenge-tatcha-site-desktop-mobile-app-beauty-offers-page-banner-en-us-can.jpg?imwidth=240",
+    "title": "Improve Your Skin Barrier in One Week",
+    "description": "Revitalize skin and visibly calm irriation with Tatcha",
+    "available": "Complimentary with $35 purchase.",
+    "details": "Beauty Insider member only",
+    "store": "Online only",
+    "policy": "++Exclusions/terms apply"
+  },
+  {
+    "card": "compliment",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/December/2022-12-16-promo-app-beauty-offers-banner-RETROGLAM-us-ca-handoff.jpg?imwidth=240",
+    "title": "Free Eyeshadow Trial Size",
+    "description": "Get a Natasha Denona trial size in shade Flutter from the NEW Retro Glam Palette",
+    "available": "Free with $25 purchase.",
+    "details": "Beauty Insider member only",
+    "store": "Online only",
+    "policy": "++Exclusions/terms apply"
+  },
+  {
+    "card": "offer",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/November/percent-off-basket-app-content-card-promo.png?imwidth=240",
+    "title": "Get 10% off Your Next Purchase**",
+    "description": "When you sign up for text updates.Plus,never miss out on exclusive releases,events and offers",
+    "details": "Beauty Insider member only",
+    "store": "In store & Online only Ends 1/23/2023",
+    "policy": "++Exclusions/terms apply.While supplies last",
+    "buttonText":"Learn More",
+    "url1":"https://www.sephora.com/beauty/text-alerts?icid2=homepage_smstext_110822_promo_us_ca_cta",
+    "date":""
+  },
+  {
+    "card": "compliment",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/November/2022-11-XX-stock-up-on-dior-site-desktop-mobile-app-beauty-offers-page-banner-en-us.jpg?imwidth=240",
+    "title": "Complimentary Trial Size from Dior",
+    "description": "Get a glowy finish with this bestselling foundation in one of six shades",
+    "available": "Compliementary with $35 purchase",
+    "details": "Beauty Insider member only",
+    "store": "Online only",
+    "policy": "++Exclusions/terms apply."
+  },
+  {
+    "card": "compliment",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/October/2022-10-24-slotting-promo-app-beauty-offers-banner-STRONGERHAIR-us-handoff.jpg?imwidth=240",
+    "title": "Choose 2 Complimentary Hair Care Trial Sizes",
+    "description": "Pick 2 Trial sizes for stronger hair from Olaplex,Virtue,Briogeo,or Christohpe Robin",
+    "available": "Complimentary with $35 purchase.",
+    "details": "Beauty Insider member only",
+    "store": "Online only"
+  },
+  {
+    "card": "compliment",
+    "image": "https://www.sephora.com/contentimages/promo/beautyoffers/2022/September/2022-09-29-slotting-promo-app-beauty-offers-banner-SKINLUXE-us-handoff.jpg?imwidth=240",
+    "title": "Choose a Complimentary Skincare Trial Size",
+    "description": "Pick a luxe trial size from Lancome,Guerian,SK-II,Augustinus Bader,or La Mer",
+    "available": "Complimentary with $55 purchase.",
+    "details": "Beauty Insider member only",
+    "store": "Online only",
+    "policy": "++Exclusions/terms apply"
+  }
+]
