@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles'
-import TextBox from '../Common/TextBox'
-import Button from '../Common/Button'
+import TextBox from '../../Common/TextBox'
+import Button from '../../Common/Button'
 import Grid from '@mui/material/Grid'
 import { useState } from 'react'
-import { emailValidator } from '../Common/vaildate'
+import { emailValidator } from '../../Common/vaildate'
 const useStyles = makeStyles(theme => ({
   wrap: {
     display: 'flex',

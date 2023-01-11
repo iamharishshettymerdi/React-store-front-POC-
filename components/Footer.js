@@ -6,6 +6,7 @@ import FooterBody from './FooterComponents/FooterBody'
 import FooterHeader from './FooterComponents/FooterHeader'
 import FooterEnd from './FooterComponents/FooterEnd'
 import Grid from '@mui/material/Grid'
+import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles(theme => ({
   container: {
     backgroundColor: 'black',
@@ -21,6 +22,12 @@ const useStyles = makeStyles(theme => ({
     padding: '32px 16px 0 16px',
     lineHeight: "1.25",
   },
+  footerdivider:
+  {
+    background: 'gray',
+    width: '85%',
+    margin: 'auto'
+  }
 }))
 const Footer = () => {
   const classes = useStyles()
@@ -28,7 +35,9 @@ const Footer = () => {
     <Grid className={classes.container}>
       <Grid className={classes.wrap}>
         <FooterHeader />
+        <Divider className={classes.footerdivider}/>
         <FooterBody />
+        <Divider className={classes.footerdivider}/>
         <FooterEnd />
       </Grid>
     </Grid>

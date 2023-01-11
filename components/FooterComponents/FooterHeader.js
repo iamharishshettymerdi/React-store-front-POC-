@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 const FooterHeader = () => {
   const classes = useStyles()
   return (
-    <Container>
+    <Container style={{marginBottom: '25px'}}>
       <Grid container spacing={2} >
         {Headerdata.map((item, index) => (
           <Grid items lg={2} sm={12} className={classes.wrap} key={index}>

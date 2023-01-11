@@ -11,10 +11,12 @@ const useStyles = makeStyles(theme => ({
     bottom: '0px',
     backgroundColor:'black',
     color:'white',
-    margin:"5px 0 0 20px",
+    // margin:"5px 0 0 20px",
     [theme.breakpoints.down('md')]: {
       margin:"55px 0 0 0",
     },
+    width:' 89%',
+    margin: 'auto'
 
   },
   headerLine:{

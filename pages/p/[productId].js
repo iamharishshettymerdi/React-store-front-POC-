@@ -26,6 +26,11 @@ import ProductOptionSelector from 'react-storefront/option/ProductOptionSelector
 import fetchFromAPI from 'react-storefront/props/fetchFromAPI'
 import createLazyProps from 'react-storefront/props/createLazyProps'
 
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import AddIcon from '@material-ui/icons/Add';
+
 const fetchVariant = fetchLatest(fetch)
 
 const useDidMountEffect = (func, deps) => {
@@ -79,6 +84,9 @@ const styles = theme => ({
       boxShadow: 'none',
     },
   },
+  breadcrumsclass:{
+    background:'white'
+  }
 })
 
 const useStyles = makeStyles(styles)
@@ -153,7 +161,7 @@ const Product = React.memo(lazyProps => {
   return (
     <>
       <Breadcrumbs items={!loading && state.pageData.breadcrumbs} />
-      <Container maxWidth="lg" style={{ paddingTop: theme.spacing(2) }}>
+      <Container maxWidth="lg" style={{ paddingTop: theme.spacing(2) }} >
         <form onSubmit={handleSubmit} method="post" action-xhr="/api/cart">
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={5}>
@@ -273,6 +281,57 @@ const Product = React.memo(lazyProps => {
               <CmsSlot label="Specs">{product.specs}</CmsSlot>
             </TabPanel>
           </Grid>
+
+          <Grid item xs={12}>
+          <Accordion onClick={()=>{console.log("Clicked Accordian")}}>
+        <AccordionSummary
+          expandIcon={<AddIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>Ingredients</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+              Isododecane, CI 77000 (Aluminum Powder), Trimethylsiloxysilicate, Polyethylene, Dimethicone, Synthetic Wax, Synthetic Fluorphlogopite, Silica, Polybutene, Polyglyceryl-4 Diisostearate/Polyhydroxystearate/Sebacate, CI 77891 (Titanium Dioxide), Mica, Caprylic/Capric Triglyceride, Stearalkonium Hectorite, Propylene Carbonate.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<AddIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>How to Use</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+           <b>Suggested Usage:</b>
+           
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      
+
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<AddIcon />}
+          aria-controls="panel3a-content"
+          id="panel2a-header"
+        >
+          <Typography>Compare Similar Products</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+          </Grid>
+
+
           <Grid item xs={12}>
             <Lazy style={{ minHeight: 285 }}>
               <SuggestedProducts product={product} />

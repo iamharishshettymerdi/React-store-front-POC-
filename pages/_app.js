@@ -12,6 +12,7 @@ import SessionProvider from 'react-storefront/session/SessionProvider'
 import useAppStore from 'react-storefront/hooks/useAppStore'
 import Banner from '../components/Banner'
 import Corousel from '../components/custom components/carouselBanner'
+import Footer from '../components/Footer'
 // import Header from '../components/customheader'
 import '../components/custom components/corousal.css'
 
@@ -54,6 +55,7 @@ export default function MyApp({ Component, pageProps }) {
   
             <Component {...pageProps} />
           </main>
+          <Footer/>
         </MuiThemeProvider>
       </SessionProvider>
     </PWA> 

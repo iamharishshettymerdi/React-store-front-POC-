@@ -10,7 +10,12 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles({
     card: {
       minWidth: 0,
-      cursor:'pointer'
+      cursor:'pointer',
+      "&:hover": {
+        transform: 'translateY(-5px) scale(1.005) translateZ(0)'  
+      },
+      height: '130px',
+      width: '136px'
     },
     bullet: {
       display: 'inline-block',
