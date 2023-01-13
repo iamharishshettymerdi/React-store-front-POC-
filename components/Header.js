@@ -32,23 +32,49 @@ const useStyles = makeStyles(theme => ({
       textAlign: 'center',
       width: '98%',
       margin: 'auto',
-      padding: '10px'
+      padding:'0px'
   },
   Headeroptioncontaier:{
     "&:hover": {
       cursor:'pointer',
       textDecoration:'underline'
     },
-    "&:hover $icon": {
-      color: 'red',
-      textDecoration: 'underline'
-  }},
+  //   "&:hover $icon": {
+  //     color: 'red',
+  //     textDecoration: 'underline'
+  // }
+},
   icon:{
     width: '2em',
     cursor:'pointer'
   },
   textbox:{
     paddingLeft: '30px'
+  },
+  iconcontainer:{
+    // background:'red',
+    width: 'fit-content',
+    display: 'flex',
+    padding: '10px'
+    // "&:hover $spanbelowtextclass":{
+    //   boxShadow: 'rgb(0 0 0) 0px 2px 0px 0px'
+    // }
+  },
+  spanbelowtextclass:{
+    whiteSpace: 'pre-wrap',
+    overflowWrap: 'break-word',
+    maxWidth: '28ch',
+    display: 'block',
+    fontSize: '11px',
+    paddingBottom: '4px',
+    marginBottom: '-4px',
+    color: 'rgb(102, 102, 102)',
+    width: 'fit-content'
+  },
+  classdef:{
+    display: 'flex',
+    padding: '10px',
+    flex: '55%'
   }
   
   }))
@@ -61,10 +87,12 @@ export default function Header({ menu }) {
   const { session } = useContext(SessionContext)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handlePopoverOpen = (event) => {
+    document.getElementById('spanbelowid').setAttribute('boxShadow','rgb(0 0 0) 0px 2px 0px 0px');
     setAnchorEl(event.currentTarget);
   };
 
   const handlePopoverClose = () => {
+    document.getElementById('spanbelowid').setAttribute('boxShadow','rgb(0 0 0) 0px 2px 0px 0px');
     setAnchorEl(null);
   };
   const open = Boolean(anchorEl);
@@ -84,22 +112,24 @@ export default function Header({ menu }) {
                 <Search className="search1"/>
             </div>
           </div>
-        <div className="flex-item-right">
-            <div class="cards">
-            {headerdata.map((m)=>(
-            <div className="card cardcontainer"  aria-owns={open ? 'mouse-over-popover' : undefined}
-            aria-haspopup="true"
-            onMouseEnter={handlePopoverOpen}>
-              <Box className={classes.Headeroptioncontaier}  >
-                  <StorefrontOutlinedIcon className={classes.icon} />{m.header}<br/>
-                </Box>
-            </div>            
-            ))}
-            <div className="cards" style={{margin: '15px'}}>
+        <div  className={classes.classdef}>
+
+        {headerdata.map((m)=>(
+             <div aria-owns={open ? 'mouse-over-popover' : undefined}
+             aria-haspopup="true"
+             onMouseEnter={handlePopoverOpen} className={classes.iconcontainer}>
+              <div>
+                <StorefrontOutlinedIcon className={classes.icon} />
+              </div>
+              <div style={{textAlign: 'left'}}>
+                {m.header}<span onMouseEnter={handlePopoverOpen} className={classes.spanbelowtextclass} id="spanbelowid">{m.headerbelowText}</span>
+              </div>
+             </div>
+        ))}
+            <div className="cards" style={{margin: '10px'}}>
               <ModeCommentOutlinedIcon className={classes.icon}/>
               <FavoriteBorderOutlinedIcon className={classes.icon}/>
               <LocalMallOutlinedIcon className={classes.icon}/>
-            </div>
             </div>
         </div>
       </div>
@@ -125,7 +155,7 @@ export default function Header({ menu }) {
         disableRestoreFocus
       >
         <Typography style={{width:'300px'}} sx={{ p: 1 }}>
-          <Box style={{ justifyContent: 'center',
+        <Box style={{ justifyContent: 'center',
                       paddingBottom: '8px',
                       display: 'flex'}}><button style={{fontSize: '12px',
                         padding: '0.25em 0.875em',
@@ -144,29 +174,6 @@ export default function Header({ menu }) {
                         backgroundColor: 'rgb(0, 0, 0)',
                         transition: 'background-color 0.2s ease 0s',
                         minWidth: '5.5em'}}>Choose Your Store</button></Box>
-
-<Paper sx={{ width: 320 }}>
-      <Box style={{backgroundColor:'#f6f6f8',padding:'3px'}}><span style={{background: 'white',
-        width: '94%',
-        height: '40px'}}>
-      <LocationOnOutlinedIcon/>Find a Sephora</span></Box>
-      <MenuList dense>
-      {headerdata.map((m,index)=>(
-      <div>
-          <b style={{padding: '15px'}}>{m.headermenuoptiontitle}</b>
-          {headerdata[index].headerMenuOption?.map((n,index)=>(
-             <div>
-             <MenuItem style={{padding:'15px'}}>
-             <ListItemText><span style={{display: 'flex'}}><img src={n.icon} width={55} height={60}/><p style={{margin: '10px'}}>{n.headersuboption}</p><p>
-               </p><p className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>{n.headersubtext}</p></span></ListItemText>
-           </MenuItem>
-           {headerdata[0].headerMenuOption.length-1!=index?<Divider />:''}
-           </div>
-          ))}
-      </div>
-      ))}
-      </MenuList>
-    </Paper>
         </Typography>
       </Popover>
     </>
