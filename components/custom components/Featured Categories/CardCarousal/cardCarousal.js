@@ -2,7 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { makeStyles } from '@material-ui/core/styles'
 import { useState } from "react";
-
+import QuicklookModal from "../../../Quicklookmodal/quicklookmadal";
 const useStyles = makeStyles(theme => ({
   heading: {
       fontSize: "20px",
@@ -31,9 +31,6 @@ card:{
     minHeight: '250px',
     padding: '16px',
     cursor:'pointer',
-    "&:hover": {
-      // transform: 'translateY(0) scale(1.005) translateZ(42px);'  
-    },
     "&:hover $btnclass": {
       display:'block'
   }
@@ -143,7 +140,7 @@ const responsive = {
 };
 
 export default function MultiCarousel(props) {
-
+  const [open, setOpen] = useState(false);
   console.log("productdata ",props.productdata)
   const [productdata,setproductdata]=useState(props.productdata)
   const classes = useStyles()
@@ -153,7 +150,7 @@ export default function MultiCarousel(props) {
       <h2 className={classes.heading}>{productdata.title}</h2>
       <Carousel  responsive={responsive}>
       {productdata.productdata.map((product,index)=>(
-        <div className={classes.card}>
+        <div className={classes.card} onMouseEnter={()=>{console.log("entered");setOpen(true)}} onMouseLeave={()=>{console.log("left");setOpen(false)}}>
           {productdata.title==='Just Dropped' && <div style={{position: 'absolute',
     top: '8px',
     left: '8px',
@@ -174,6 +171,7 @@ export default function MultiCarousel(props) {
         <div style={{transition: 'opacity .2s',position: 'absolute',
     width:' 73%',top: '55%'}}>
            <button className={classes.btnclass}>Quicklook</button>
+         {/* {open && <QuicklookModal  productImage={product.imageurl}/>} */}
         </div>
         <div >
           <h2 className ={classes.productName}>{product.name}</h2>

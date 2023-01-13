@@ -18,28 +18,32 @@ const useStyles = makeStyles(theme => ({
 }))
 const GiftandPromotion=(props)=>{
     const classes = useStyles()
+    console.log("gift compo ",props.data)
     return (
-        <div className={classes.main}>
-                 <Card sx={{ maxWidth: 345 }}>
-       
-        <CardContent style={{height: '115px',background:props.backgroundcolor}}>
-          <Typography gutterBottom variant="h6" component="div">
-            {props.heading}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-           {props.description}
-          </Typography>
-        </CardContent>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="140"
-          image={props.imageurl}
-        />
-      
-      </Card>
-        </div>
-       
+      <div >
+           {props?.data?.map((element)=>(
+                <div className={classes.main}>
+                <Card sx={{ maxWidth: 345 }}>
+                
+                <CardContent style={{height: '115px',background:element.backgroundcolor}}>
+                  <Typography gutterBottom variant="h6" component="div">
+                    {element.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {element.description}
+                  </Typography>
+                </CardContent>
+                <CardMedia
+                  component="img"
+                  alt="green iguana"
+                  height="140"
+                  image={element.image}
+                />
+              
+              </Card>
+                </div>
+                    ))}
+      </div>
 
         
       );
