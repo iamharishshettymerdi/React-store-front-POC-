@@ -155,7 +155,7 @@ export default function Header({ menu }) {
         disableRestoreFocus
       >
         <Typography style={{width:'300px'}} sx={{ p: 1 }}>
-        <Box style={{ justifyContent: 'center',
+          <Box style={{ justifyContent: 'center',
                       paddingBottom: '8px',
                       display: 'flex'}}><button style={{fontSize: '12px',
                         padding: '0.25em 0.875em',
@@ -174,6 +174,29 @@ export default function Header({ menu }) {
                         backgroundColor: 'rgb(0, 0, 0)',
                         transition: 'background-color 0.2s ease 0s',
                         minWidth: '5.5em'}}>Choose Your Store</button></Box>
+
+<Paper sx={{ width: 320 }}>
+      <Box style={{backgroundColor:'#f6f6f8',padding:'3px'}}><span style={{background: 'white',
+        width: '94%',
+        height: '40px'}}>
+      <LocationOnOutlinedIcon/>Find a Sephora</span></Box>
+      <MenuList dense>
+      {headerdata.map((m,index)=>(
+      <div>
+          <b style={{padding: '15px'}}>{m.headermenuoptiontitle}</b>
+          {headerdata[index].headerMenuOption?.map((n,index)=>(
+             <div>
+             <MenuItem style={{padding:'15px'}}>
+             <ListItemText><span style={{display: 'flex'}}><img src={n.icon} width={55} height={60}/><p style={{margin: '10px'}}>{n.headersuboption}</p><p>
+               </p><p className={classes.spanclass} style={{ marginLeft: '-63px',marginTop: '35px'}}>{n.headersubtext}</p></span></ListItemText>
+           </MenuItem>
+           {headerdata[0].headerMenuOption.length-1!=index?<Divider />:''}
+           </div>
+          ))}
+      </div>
+      ))}
+      </MenuList>
+    </Paper>
         </Typography>
       </Popover>
     </>
