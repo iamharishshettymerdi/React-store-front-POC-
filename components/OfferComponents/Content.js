@@ -22,6 +22,10 @@ const useStyles = makeStyles(theme => ({
   wrap:{
   gap:"12px",
   },
+  contentcontainer:{
+    marginTop:'30px',
+    marginBottom:'30px'
+  }
 }))
 const Content = () => {
   const classes = useStyles()
@@ -51,7 +55,7 @@ const Content = () => {
   }
 
   return (
-    <div>
+    <div className={classes.contentcontainer}>
       <div className={classes.header} style={{display:"grid",gridTemplateRows:"55px", gap: "12px",gridTemplateColumns: "auto auto",alignItems:"baseline"}}>
       <h2 style={{alignContent:"left"}}>Beauty Offer({count})
       </h2>

@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import { spacing } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
+import { useState } from 'react';
+
 const useStyles = makeStyles({
     card: {
       minWidth: 0,
@@ -14,8 +15,8 @@ const useStyles = makeStyles({
       "&:hover": {
         transform: 'translateY(-5px) scale(1.005) translateZ(0)'  
       },
-      height: '130px',
-      width: '136px'
+      height: '140px',
+      width: '120px'
     },
     bullet: {
       display: 'inline-block',
@@ -36,34 +37,30 @@ const useStyles = makeStyles({
   });
 
 const CategoriesComponent=(props)=>{
-    console.log("props ",props)
+    console.log("props ",props.data.featuredcategories)
+    const [data,setdata]=useState(props.data.featuredcategories)
+    console.log("Data ",data)
     const classes = useStyles();
 
+
   return (
-    <div>
-      <Box m={1} >
-        <Card className={classes.card} style={{height: '145px',}}>
+    <div style={{display: 'flex',marginTop: '30px',marginBottom:'30px'}}>
+      <h2 style={{width: '125px'}}>{props.data.title}</h2>
+      {props?.data?.data?.map((element)=>(<Box m={1} >
+        <Card className={classes.card}>
           <CardContent  >
-            {/* <Typography variant="h5" component="h2" >
-                Typography 1
-            </Typography>
-            <Typography className={classes.pos} color="textSecondary" ml={10} pos="10">
-            </Typography> */}
             <Typography variant="body2" component="p">
-                {props.data.name}
+                {element.name}
                 <div className={classes.imagecontainer}>   
-                     <img src={props.data.image} width="50" height="50"/>
+                     <img src={element.image} width="50" height="50"/>
                 </div>
             </Typography>
           </CardContent>
-    
-          {/* <CardActions>
-            <Button size="small" color="primary" >Learn More</Button>
-          </CardActions> */}
         </Card>
-  
-      </Box>
-      <Divider />
+      </Box>))}
+
+
+      
     </div>
   );
 }

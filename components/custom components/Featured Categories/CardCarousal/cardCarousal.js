@@ -2,7 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { makeStyles } from '@material-ui/core/styles'
 import { useState } from "react";
-
+import QuicklookModal from "../../../Quicklookmodal/quicklookmadal";
 const useStyles = makeStyles(theme => ({
   heading: {
       fontSize: "20px",
@@ -29,10 +29,11 @@ card:{
     transitionDuration: "10s",
     transform : "0.2s ease 0s",
     minHeight: '250px',
-    padding: '16px'
-    // '&:hover':{
-    //     margin: "16px",
-    // }
+    padding: '16px',
+    cursor:'pointer',
+    "&:hover $btnclass": {
+      display:'block'
+  }
 },
 price: {
     color: "grey",
@@ -56,9 +57,8 @@ productDescription:{
     textOverflow: "ellipsis", 
 },
 container:{
-  width: '81%',
-  margin: 'auto',
-  marginTop: '30px'
+  marginTop: '30px',
+  marginBottom: '30px'
 },
 spancl:
 {
@@ -76,6 +76,42 @@ spancl:
     paddingLeft: '0.6em',
     paddingRight: '0.6em',
     width: 'fit-content'
+},
+btnclass:
+{
+  width: '100%',
+  transition: 'opacity 0.3s ease 0s',
+  textAlign: 'center',
+  color: 'rgb(255, 255, 255)',
+  lineHeight: '1',
+  fontWeight: '700',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  fontSize: '12px',
+  borderRadius: '4px',
+  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  opacity: 1,
+  '&hover':{
+    backgroundColor: 'rgba(102, 102, 102, 0.9)'
+  },
+  cursor:'pointer',
+  display:'none'
+},
+edgetext:
+{
+  position: 'absolute',
+    top: '0px',
+    right: '0px',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    lineHeight: '1',
+    color:'rgb(255, 255, 255)',
+    fontWeight: 700,
+    width: '3.75em',
+    height: '3.75em',
+    background: 'linear-gradient(to right top, transparent 0%, transparent 50%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 100%)',
+    margin:'8px',
+    padding:'8px'
 }
 
 }))
@@ -104,7 +140,7 @@ const responsive = {
 };
 
 export default function MultiCarousel(props) {
-
+  const [open, setOpen] = useState(false);
   console.log("productdata ",props.productdata)
   const [productdata,setproductdata]=useState(props.productdata)
   const classes = useStyles()
@@ -113,8 +149,8 @@ export default function MultiCarousel(props) {
     <div className={classes.container}>
       <h2 className={classes.heading}>{productdata.title}</h2>
       <Carousel  responsive={responsive}>
-      {productdata.productdata.map((product)=>(
-        <div className={classes.card}>
+      {productdata.productdata.map((product,index)=>(
+        <div className={classes.card} onMouseEnter={()=>{console.log("entered");setOpen(true)}} onMouseLeave={()=>{console.log("left");setOpen(false)}}>
           {productdata.title==='Just Dropped' && <div style={{position: 'absolute',
     top: '8px',
     left: '8px',
@@ -124,11 +160,18 @@ export default function MultiCarousel(props) {
       {product.limitedEdition?<span className={classes.spancl}>Limited Edition</span>:''}
 
           </div>}
+          
+      
+
+          {productdata.title==='Selling Fast' &&  <div className={classes.edgetext}>#{index+1}</div>}
+         
         <div className = {classes.Image}>
           <img className={classes.productImage} src={product.imageurl} alt="product image" />
-          <p>
-            
-          </p>
+        </div>
+        <div style={{transition: 'opacity .2s',position: 'absolute',
+    width:' 73%',top: '55%'}}>
+           <button className={classes.btnclass}>Quicklook</button>
+         {/* {open && <QuicklookModal  productImage={product.imageurl}/>} */}
         </div>
         <div >
           <h2 className ={classes.productName}>{product.name}</h2>

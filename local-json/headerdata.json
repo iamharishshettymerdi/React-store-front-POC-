@@ -31,14 +31,16 @@
         "id" : 7,
         "header":"Community",
         "headerOption":"",
-        "icon" : "ArrowRight"
+        "icon" : "ArrowRight",
+        "headerbelowText":""
        
     },
     {
         "id" : 7,
         "header":"Sign In",
         "headerOption":"",
-        "icon" : "ArrowRight"
+        "icon" : "ArrowRight",
+        "headerbelowText":"for FREE Shipping"
        
     }
 ]

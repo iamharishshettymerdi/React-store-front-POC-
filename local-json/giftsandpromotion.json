@@ -1,0 +1,18 @@
+[{
+    "title":"Got A Gift Card?",
+    "image":"https://www.sephora.com/contentimages/2022-12-26-holiday-launch-site-mobile-desktop-rwd-home-page-marketing-banner-gift-card-redeem-800x256-us-can.jpg?imwidth=400",
+    "description":"Redeem now and shop our sale.",
+    "backgroundcolor":"darkgoldenrod"
+},
+{
+    "title":"NEW Jo Malone London",
+    "image":"https://www.sephora.com/contentimages/2022-12-30-jo-malone-london-roses-collection-site-desktop-mweb-home-page-rwd-marketing-banner-800x256-en-us-can.jpg?imwidth=400",
+    "description":"Limited-edition floral scents with notes of scarlet velvet rose, honeycomb, and vanilla.",
+    "backgroundcolor":"antiquewhite"
+},
+{
+    "title":"Try Same-Day Unlimited for FREE",
+    "image":"https://www.sephora.com/contentimages/homepage/092022/Homepage/RWD/2022-09-30-hp-marketing-banner-convenience-hub-same-day-unlimited-us-ca-rwd-slice.jpeg?imwidth=400",
+    "description":"Want to get your beauty in as little as two hours? Enjoy a 30-day subscription trial.",
+    "backgroundcolor":"lightsteelblue"
+}]

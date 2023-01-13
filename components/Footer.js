@@ -27,12 +27,30 @@ const useStyles = makeStyles(theme => ({
     background: 'gray',
     width: '85%',
     margin: 'auto'
+  },
+  feedbacksection:
+  {
+    backgroundColor: 'rgb(204, 204, 204)',
+    justifyContent: 'center',
+    display: 'flex',
+    color:'black',
+    padding: '15px',
+    fontSize:'13px'
+  },
+  feedbacktext:{
+    color:'black',
+    textDecoration:'none',
+    cursor:'pointer',
+    '&:hover':{
+      textDecoration:'underline'
+    }
   }
 }))
 const Footer = () => {
   const classes = useStyles()
   return (
     <Grid className={classes.container}>
+       <div className={classes.feedbacksection}><b><a className={classes.feedbacktext}>Website feedback? Let us know ▸</a></b></div>
       <Grid className={classes.wrap}>
         <FooterHeader />
         <Divider className={classes.footerdivider}/>
