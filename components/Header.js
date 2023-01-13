@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
       display: 'flex',
       flexWrap: 'wrap',
       textAlign: 'center',
-      width: '86%',
+      width: '98%',
       margin: 'auto',
       padding: '10px'
   },
@@ -47,6 +47,9 @@ const useStyles = makeStyles(theme => ({
     width: '2em',
     cursor:'pointer'
   },
+  textbox:{
+    paddingLeft: '30px'
+  }
   
   }))
 

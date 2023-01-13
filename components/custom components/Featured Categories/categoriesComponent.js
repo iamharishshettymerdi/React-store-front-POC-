@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { spacing } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
+
 const useStyles = makeStyles({
     card: {
       minWidth: 0,
@@ -63,7 +63,6 @@ const CategoriesComponent=(props)=>{
         </Card>
   
       </Box>
-      <Divider />
     </div>
   );
 }

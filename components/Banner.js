@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
       marginLeft:'auto',
       marginRight:'auto',
       cursor:'pointer',
-      height:'50px',
+      height: '65px',
       '&:hover':{
         textDecoration:'underline'
       }
