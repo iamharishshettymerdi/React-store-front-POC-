@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@mui/material/Button'
 import { Box, styled } from '@mui/material'
 import QuicklookModal from './QuicklookModal'
+import Form from '../../Common/Form'
 const Main = styled(Box)`
   .label {
     min-height: 55px;
@@ -100,11 +101,15 @@ const useStyles = makeStyles(theme => ({
 export default function Product({ name, url, point, description, productimage, id }) {
   const classes = useStyles()
   const [value, setValue] = React.useState(false)
+  const [form,setForm]=React.useState(false)
   const details = { name, point, description, productimage, id }
-  const handleClick = () => {
-    setValue(true)
+  const closeModal = () => {
+    setValue(state =>!state)
   }
-  console.log(value)
+  
+  const closeForm = ()=>{
+    setForm(state=> !state)
+  }
   return (
     <Main className={classes.card}>
       <div className={classes.container}>
@@ -113,10 +118,10 @@ export default function Product({ name, url, point, description, productimage, i
             <div style={{ position: 'relative', display: 'block' }}>
               <img className={classes.productImage} src={url} alt="product image" />
               <div style={{ position: 'absolute', bottom: '0', width: '100%' }}>
-                <Button className={classes.quickmodal} onClick={()=>handleClick()}>
+                <Button className={classes.quickmodal} onClick={()=>setValue(true)}>
                   QuickLook
-                  {value ? <QuicklookModal details={details} handle={value} style={{ padding: '0', width: '100%'}}/>:""}
                 </Button>
+                 <QuicklookModal details={details} open={value} closeModal={closeModal} style={{ padding: '0', width: '100%'}}/>
               </div>
             </div>
           </div>
@@ -146,9 +151,11 @@ export default function Product({ name, url, point, description, productimage, i
                 textTransform: 'none',
               }}
               variant="outlined"
+             onClick={()=>setForm(true)}
             >
               Sign in to Access
-            </Button>
+            </Button >
+            <Form value={form} closeForm={closeForm}/>
           </div>
         </div>
       </div>

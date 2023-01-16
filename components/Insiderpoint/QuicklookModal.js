@@ -68,16 +68,15 @@ const style = {
 }
 
 export default function QuicklookModal(props) {
-  const [open, setOpen] = React.useState(true)
-  const handleClose = React.useCallback(() => setOpen(false), [])
   const classes = useStyles()
   const theme = useTheme()
   const { productimage, name, description, point, id } = props.details
+  const {open,closeModal}=props
   return (
     <div style={{ width: '100%' }}>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={closeModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         closeAfterTransition={true}
@@ -99,7 +98,7 @@ export default function QuicklookModal(props) {
               }}
             >
               <Grid cotainer spacing={24}>
-                <Grid item sx={24} sm={12} md={12} lg={12}>
+                <Grid item sx={12} sm={12} md={12} lg={12}>
                   <Box sx={{ width: '100%' }}>
                     <Typography
                       style={{
@@ -217,15 +216,19 @@ export default function QuicklookModal(props) {
                 <Button
                   style={{
                     position: 'absolute',
-                    top: '0px',
-                    right: '0px',
+                    top: '2rem',
+                    right: '1rem',
                     zIndex: '3',
                     lineheight: 0,
-                    height: '95px',
-                    border:0,
+                    height: 'fit-content',
+                    border: 0,
+                    borderRadius: '50px',
+                    width: 'fit-content',
+                    padding: "12px",
+                    minWidth:0,
                   }}
                 >
-                  <CloseIcon style={{ color: 'black' }} onClick={handleClose} />
+                  <CloseIcon style={{ color: 'black' }} onClick={closeModal} />
                 </Button>
               </Grid>
             </Container>
