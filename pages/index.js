@@ -21,6 +21,7 @@ import giftandpromotion from '../local-json/giftsandpromotion.json'
 import giftandpromotion2 from '../local-json/giftsandpromotion2.json'
 
 import MultiCarousel from '../components/custom components/Featured Categories/CardCarousal/cardCarousal'
+import InsiderRewards from '../components/Insiderpoint/InsiderRewards'
 import { useState } from 'react'
 const useStyles = makeStyles(theme => ({
   main: {
@@ -105,12 +106,14 @@ export default function Index(lazyProps) {
           <GiftandPromotion  data={giftandpromotion}/>
           <Divider/>
           <MultiCarousel productdata={sellingfast}/>
+          <InsiderRewards/>
           <Divider/>
 
           <CategoriesComponent data={featuredcategories}/>
 
           <Divider/>
           <CategoriesComponent data={Guidlines}/>
+       
           <Divider/>
 
           <GiftandPromotion data={giftandpromotion2}/>

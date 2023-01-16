@@ -45,7 +45,7 @@ const responsive = {
     items: 1,
   },
 }
-export default function MultiCarousel() {
+export default function InsiderRewards() {
   const classes = useStyles()
   const product = productData.map((item, index) => (
     <Product
