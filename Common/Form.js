@@ -86,7 +86,7 @@ const style = {
   borderRadius: '6px',
 }
 
-export default function Form() {
+export default function Form({value,closeForm}) {
     const classes=useStyles()
     const [open,setOpen]=React.useState(true)
     const handleClose=()=>{
@@ -96,8 +96,8 @@ export default function Form() {
   return (
     <>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={value}
+        onClose={closeForm}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -187,7 +187,7 @@ export default function Form() {
                           backgroundColor:'transparent',
 
                         }} >
-                        <CloseIcon style={{color:"black"}}  onClick={handleClose}/>
+                        <CloseIcon style={{color:"black"}}  onClick={closeForm}/>
                       </button>
         </Box>
       </Modal>
