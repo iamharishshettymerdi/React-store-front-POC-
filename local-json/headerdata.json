@@ -32,7 +32,26 @@
         "header":"Community",
         "headerOption":"",
         "icon" : "ArrowRight",
-        "headerbelowText":""
+        "headerbelowText":"",
+        "headermenuoptiontitle":"Happening",
+        "headerMenuOption":[
+            {
+                "headersuboption":"Services1",
+                "icon":"https://www.sephora.com/contentimages/meganav/icons/happening_services.jpg",
+                "headersubtext":"Personalized makeup,skincare and brow services "
+            },
+            {
+                "headersuboption":"Store Events1",
+                "icon":"https://www.sephora.com/contentimages/meganav/icons/happening_events_2.jpg",
+                "headersubtext":"Exciting launches parties & more "
+            },
+            {
+                "headersuboption":"What's New in Stor1e",
+                "icon":"https://www.sephora.com/contentimages/meganav/icons/happening_new.jpg",
+                "headersubtext":"Explore What's hot in your place "
+            }
+          
+        ]
        
     },
     {
