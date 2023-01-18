@@ -3,7 +3,7 @@
     "productdata":[{
       "id": 1,
       "imageurl":
-        "https://www.sephora.com/productimages/sku/s2181006-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166",
+        "https://www.sephora.com/productimages/sku/s2181006-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=244",
       "name": "Tatcha",
       "price": "$19.99",
       "description": "The Dewy Skin Cream Plumping & Hydrating Moisturizer",
@@ -45,7 +45,7 @@
     {
       "id": 4,
       "imageurl":
-        "https://www.sephora.com/productimages/sku/s2419786-main-zoom.jpg?imwidth=122",
+        "https://www.sephora.com/productimages/sku/s2419786-main-zoom.jpg?imwidth=244",
       "name": "Charlotte Tilbury",
       "price": "$14.99",
       "description": "Hollywood Flawless Filter",
@@ -59,7 +59,7 @@
     {
       "id": 5,
       "imageurl":
-        "https://www.sephora.com/productimages/sku/s2618536-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=122",
+        "https://www.sephora.com/productimages/sku/s2618536-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=244",
       "name": "Tatcha",
       "price": "$38.99",
       "description": "Clarifying Essentials Set",
@@ -86,7 +86,7 @@
     },
     {
       "id": 7,
-      "imageurl": "https://www.sephora.com/productimages/sku/s2629475-main-zoom.jpg?imwidth=166",
+      "imageurl": "https://www.sephora.com/productimages/sku/s2629475-main-zoom.jpg?imwidth=244",
       "name": "Rare Beauty by Selena Gomez",
       "price": "$38.99",
       "description": "Positive Light Silky Touch Highlighter",
@@ -99,7 +99,7 @@
     },
     {
       "id": 8,
-      "imageurl":"https://www.sephora.com/productimages/sku/s2169423-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166",
+      "imageurl":"https://www.sephora.com/productimages/sku/s2169423-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=244",
       "name": "MILK MAKEUP",
       "price": "$49.99",
       "description": "Hydro Grip Hydrating Makeup Primer",
@@ -112,7 +112,7 @@
     },
     {
         "id": 9,
-        "imageurl":"https://www.sephora.com/productimages/sku/s2590032-main-zoom.jpg?imwidth=166",
+        "imageurl":"https://www.sephora.com/productimages/sku/s2590032-main-zoom.jpg?imwidth=244",
         "name": "Fenty Beauty by Rihanna",
         "price": "$49.99",
         "description": "Pro Filt’r Soft Matte Longwear Liquid Foundation",
@@ -125,7 +125,7 @@
     },
     {
         "id": 10,
-        "imageurl":"https://www.sephora.com/productimages/sku/s2333771-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=166",
+        "imageurl":"https://www.sephora.com/productimages/sku/s2333771-main-zoom.jpg?pb=clean-planet-positive-badge-2021&imwidth=244",
         "name": "Kosas",
         "price": "$49.99",
         "description": "Revealer Super Creamy + Brightening Concealer and Daytime Eye Cream",
@@ -138,7 +138,7 @@
     },
     {
         "id": 11,
-        "imageurl":"https://www.sephora.com/productimages/sku/s1932920-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166",
+        "imageurl":"https://www.sephora.com/productimages/sku/s1932920-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=244",
         "name": "Tatcha",
         "price": "$49.99",
         "description": "The Water Cream Oil-Free Pore Minimizing Moisturizer",
@@ -151,7 +151,7 @@
     },
     {
         "id": 12,
-        "imageurl":"https://www.sephora.com/productimages/sku/s2084408-main-zoom.jpg?imwidth=166",
+        "imageurl":"https://www.sephora.com/productimages/sku/s2084408-main-zoom.jpg?imwidth=244",
         "name": "Too Faced",
         "price": "$49.99",
         "description": "Born This Way Super Coverage Multi-Use Longwear Concealer",
@@ -164,7 +164,7 @@
     },
     {
         "id": 13,
-        "imageurl":"https://www.sephora.com/productimages/sku/s2489755-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=166",
+        "imageurl":"https://www.sephora.com/productimages/sku/s2489755-main-zoom.jpg?pb=2020-03-sephora-clean-2019&imwidth=244",
         "name": "Tatcha",
         "price": "$49.99",
         "description": "Indigo Overnight Repair Serum in Cream Treatment",

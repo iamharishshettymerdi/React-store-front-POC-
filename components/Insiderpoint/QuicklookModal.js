@@ -55,17 +55,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '6px',
   },
 }))
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '50%',
-  padding: '16px 40px 32px',
-  backgroundColor: 'rgb(255, 255, 255)',
-  display: 'block',
-  borderRadius: '6px',
-}
+
 
 export default function QuicklookModal(props) {
   const classes = useStyles()

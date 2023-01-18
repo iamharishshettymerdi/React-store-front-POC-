@@ -20,7 +20,7 @@ import sellingfast from '../local-json/sellingfast.json'
 import giftandpromotion from '../local-json/giftsandpromotion.json'
 import giftandpromotion2 from '../local-json/giftsandpromotion2.json'
 
-import MultiCarousel from '../components/custom components/Featured Categories/CardCarousal/cardCarousal'
+import MultiCarousel from '../components/custom components/Featured Categories/CardCarousal/CardCarousal'
 import InsiderRewards from '../components/Insiderpoint/InsiderRewards'
 import { useState } from 'react'
 const useStyles = makeStyles(theme => ({
