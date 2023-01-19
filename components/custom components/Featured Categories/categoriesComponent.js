@@ -44,7 +44,7 @@ const CategoriesComponent=(props)=>{
 
 
   return (
-    <div style={{display: 'flex',marginTop: '30px',marginBottom:'30px'}}>
+    <div style={{display: 'flex',marginTop: '30px',marginBottom:'30px',flexWrap: 'wrap'}}>
       <h2 style={{width: '125px'}}>{props.data.title}</h2>
       {props?.data?.data?.map((element)=>(<Box m={1} >
         <Card className={classes.card}>
