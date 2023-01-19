@@ -9,7 +9,6 @@ const useStyles = makeStyles(theme => ({
     display: 'block',
     flexShrink: '0',
     alignItems: 'normal',
-    width: '190px',
   },
   wrap: {
     position: 'relative',
@@ -21,7 +20,6 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     position: 'relative',
-    width: '240px',
     flexDirection: 'column',
     fontSize: '14px',
     lineHeight: 1.25,

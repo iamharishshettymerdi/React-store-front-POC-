@@ -29,7 +29,6 @@ const useStyles = makeStyles(theme => ({
   card: {
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
     padding: '16px',
-    width: '198px',
     borderRadius: '8px',
     maxHeight: '90%',
     minHeight: '330px',

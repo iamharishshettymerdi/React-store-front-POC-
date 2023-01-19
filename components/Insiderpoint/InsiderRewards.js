@@ -26,23 +26,29 @@ const useStyles = makeStyles(theme => ({
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
-    breakpoint: { max: 3000, min: 1024 },
-    items: 6,
-    slidesToSilde:6,
+    breakpoint: { max: 3000, min: 1500 },
+    items: 5,
+    sildestoSilde:5
+  },
+  medium:{
+    breakpoint: { max: 1500, min: 1024 },
+    items: 4,
+    sildestoSilde:1
   },
   desktop: {
-    breakpoint: { max: 1024, min: 800 },
-    items: 5,
-    slidesToSilde: 6,
+    breakpoint: { max: 1024, min: 800},
+    items: 3,
+    sildestoSilde:4
   },
   tablet: {
     breakpoint: { max: 800, min: 464 },
-    items: 3,
-    slidesToSilde:2,
+    items: 2,
+    sildestoSilde:2
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
+    sildestoSilde:1
   },
 }
 export default function InsiderRewards() {

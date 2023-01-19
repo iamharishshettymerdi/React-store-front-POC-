@@ -33,9 +33,14 @@ const Content = () => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1500 },
       items: 5,
       sildestoSilde:5
+    },
+    medium:{
+      breakpoint: { max: 1500, min: 1024 },
+      items: 4,
+      sildestoSilde:1
     },
     desktop: {
       breakpoint: { max: 1024, min: 800},
@@ -44,7 +49,7 @@ const Content = () => {
     },
     tablet: {
       breakpoint: { max: 800, min: 464 },
-      items: 3,
+      items: 2,
       sildestoSilde:2
     },
     mobile: {
