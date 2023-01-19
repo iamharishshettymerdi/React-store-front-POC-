@@ -61,7 +61,7 @@ const Content = () => {
       </h2>
       <a style={{display:"flex",justifyContent:"flex-end"}}>view all</a>
       </div>
-      <Carousel className={classes.card} responsive={responsive}>
+      <Carousel className={classes.card} responsive={responsive}  slidesToSlide={4}>
 
         {data.map((item, index) => (
           <div className={classes.wrap} key={index} style={{alignItems:"center",marginLeft: "2px"}} >

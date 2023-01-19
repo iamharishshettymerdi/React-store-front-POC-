@@ -68,7 +68,7 @@ export default function InsiderRewards() {
       <a style={{display:"flex",justifyContent:"flex-end",'&hover':{textDecoratin:"underline"}}} href={'https://www.sephora.com/rewards'}>view all</a>
       </div>
       <span>Sign in to redeem your Points</span>
-      <Carousel ssr={true} draggable={true} style={{minHeight:'330px'}} responsive={responsive}>{product}</Carousel>
+      <Carousel  slidesToSlide={6} ssr={true} draggable={true} style={{minHeight:'330px'}} responsive={responsive}>{product}</Carousel>
     </div>
   )
 }

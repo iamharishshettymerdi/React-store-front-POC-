@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         maxHeight:"100%",
         transitionDuration: "10s",
         transform : "0.2s ease 0s",
-        minHeight: '450px',
+       
         // '&:hover':{
         //     margin: "16px",
         // }
@@ -43,6 +43,10 @@ const useStyles = makeStyles(theme => ({
         overflow: "hidden",
         textOverflow: "ellipsis", 
     },
+    productdetailscontainer:{
+      padding:'15px'
+    }
+
   }))
 export default function Product(props) {
     const classes = useStyles()
@@ -55,7 +59,7 @@ export default function Product(props) {
         {/* <QuicklookModal productImage={productImage}/> */}
       </p>
     </div>
-    <div >
+    <div className={classes.productdetailscontainer}>
       <h2 className ={classes.productName}>{props.name}</h2>
       <p className = {classes.productDescription}>{props.description}</p>
       </div>

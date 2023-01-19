@@ -28,7 +28,6 @@ const useStyles = makeStyles(theme => ({
     maxHeight: '100%',
     transitionDuration: '10s',
     transform: '0.2s ease 0s',
-    minHeight: '250px',
     padding: '16px',
     cursor: 'pointer',
     '&:hover $btnclass': {
@@ -147,7 +146,7 @@ export default function MultiCarousel(props) {
   return (
     <div className={classes.container}>
       <h2 className={classes.heading}>{productdata.title}</h2>
-      <Carousel responsive={responsive}>
+      <Carousel  slidesToSlide={6} responsive={responsive}>
         {productdata.productdata.map((product, index) => (
           <div className={classes.card} key={index}>
             {productdata.title === 'Just Dropped' && (
