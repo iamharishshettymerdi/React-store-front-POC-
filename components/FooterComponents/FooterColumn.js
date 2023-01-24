@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     margin: 0,
     display: 'flex',
     flexDirection: 'column',
-    width:"440px",
+    width:"170px",
     [theme.breakpoints.down('sm')]: {
       width:"100%",
     },
@@ -23,10 +23,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     cursor: 'pointer',
+    width:'max-content'
   },
   select: {
     display: 'flex',
     lineHeight: '2.25',
+    width:'max-content',
     justifyItems: 'space-between',
     '&:hover': {
       textDecoration: 'underline',

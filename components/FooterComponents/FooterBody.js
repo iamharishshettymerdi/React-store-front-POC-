@@ -18,14 +18,13 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
   },
   custom: {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "grid",
+    gridTemplateColumns: "53% 17% 15%",
     alignItems: 'center',
     width: 'max-content',
     columnGap: '40px',
-    [theme.breakpoints.up('sm')]: {
-      flexDirection: 'row',
-      display: 'flex',
+    [theme.breakpoints.down('md')]: {
+      gridTemplateColumns: "100%",
     },
   },
   wrap: {
