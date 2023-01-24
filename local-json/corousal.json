@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "imageurl":
+        "https://www.sephora.com/contentimages/2022-12-30-slotting-just-arrived-v2-standard-site-rwd-home-page-hero-banner-4-product-english-US-handoff_01.jpg?imwidth=545",
+      "name": "Tatcha",
+      "price": "$19.99",
+      "description": "The Dewy Skin Cream Plumping & Hydrating Moisturizer",
+      "itemid": "ITEM 2181006",
+      "fullDescription": "A rich cream that feeds skin with plumping hydration and antioxidant-packed Japanese purple rice for a dewy, healthy glow.",
+      "size" : " 2.5 oz/ 75 mL"
+    },
+    {
+      "id": 2,
+      "imageurl":"https://www.sephora.com/contentimages/2022-12-29-makeup-by-mario-surrealskin-foundation-site-desktop-mweb-rwd-hero-banner-1000x750-en-us-can.jpg?imwidth=545",
+      "name": "Rare Beauty by Selena Gomez",
+      "price": "$21.99",
+      "description": "Soft Pinch Liquid Blush",
+      "itemid":"ITEM 2518959",
+      "size": "0.25 oz/ 7.5 mL",
+      "fullDescription": "A weightless, long-lasting liquid blush that blends and builds beautifully for a soft, healthy flush. Available in matte and dewy finishes"
+    },
+    {
+      "id": 3,
+      "imageurl":
+        "https://www.sephora.com/contentimages/2022-12-26-jlo-beauty-booty-cream-site-desktop-mweb-home-page-rwd-hero-banner-1000x750-en-us-can.jpg?imwidth=545",
+      "name": "LANEIGE",
+      "price": "$99.99",
+      "description": "Lip Sleeping Mask Intense Hydration with Vitamin C",
+      "itemid": "ITEM 2181006",
+      "fullDescription": "A rich cream that feeds skin with plumping hydration and antioxidant-packed Japanese purple rice for a dewy, healthy glow.",
+      "size" : " 2.5 oz/ 75 mL"
+    },
+    {
+      "id": 4,
+      "imageurl":
+        "https://www.sephora.com/contentimages/2022-12-26-sale-on-sale-eoy-sale-site-homepage-hero-banner-new-rwd-starts-today-us-can-1000x750.jpg?imwidth=545",
+      "name": "Charlotte Tilbury",
+      "price": "$14.99",
+      "description": "Hollywood Flawless Filter",
+      "itemid": "ITEM 2181006",
+      "fullDescription": "A rich cream that feeds skin with plumping hydration and antioxidant-packed Japanese purple rice for a dewy, healthy glow.",
+      "size" : " 2.5 oz/ 75 mL"
+    }
+  ]
