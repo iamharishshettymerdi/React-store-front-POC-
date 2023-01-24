@@ -19,55 +19,12 @@ import justdropped from '../local-json/justdropped.json'
 import sellingfast from '../local-json/sellingfast.json' 
 import giftandpromotion from '../local-json/giftsandpromotion.json'
 import giftandpromotion2 from '../local-json/giftsandpromotion2.json'
+import corousal from '../local-json/corousal.json'
 
 import MultiCarousel from '../components/custom components/Featured Categories/CardCarousal/CardCarousal'
 import InsiderRewards from '../components/Insiderpoint/InsiderRewards'
 import { useState } from 'react'
 const useStyles = makeStyles(theme => ({
-  main: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
-    textAlign: 'center',
-    margin: theme.spacing(10, 0, 0, 0),
-  },
-  textbox:
-  {
-    width: '100%',
-    margin: '5px 0px',
-    border:'1px solid gray',
-    padding: '10px',
-    borderRadius: '5px'
-  },
-  flexcontainer:{
-    display: 'flex',
-    flexDrection: 'row',
-    textAlign: 'center',
-    padding: '10px'
-},
-signupbutton:{
-    fontSize: '14px',
-    padding: '0.25em 1.125em',
-    minHeight: '44px',
-    fontWeight: 'var(--font-weight-bold)',
-    borderWidth: '2px',
-    display: 'inline-flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    lineHeight: '1',
-    borderColor: 'transparent',
-    textAlign: 'center',
-    textDecoration: 'none',
-    borderRadius: '99999px',
-    appearance: 'none',
-    color: 'rgb(255, 255, 255)',
-    backgroundColor: 'rgb(0, 0, 0)',
-    transition: 'background-color 0.2s ease 0s',
-    minWidth: '14.5em',
-  '&:hover':{
-    backgroundColor: 'rgb(102, 102, 102)'
-  },
-},
 datacontainer:
 {
   width: '81%',
@@ -75,19 +32,6 @@ datacontainer:
   marginTop: '30px',
 }
 }))
-
-
-const style = {
-  position: 'absolute',
-  top: '30%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  borderRadius: '5px',
-  boxShadow: 24,
-  p: 4,
-  padding:' 0px 16px'
-};
 
 export default function Index(lazyProps) {
   const classes = useStyles()
@@ -97,7 +41,7 @@ export default function Index(lazyProps) {
     <>
     <body>
       <div > 
-      <CarouselBanner/>
+      <CarouselBanner data={corousal}/>
       <div className={classes.datacontainer}>
           <MultiCarousel productdata={productdata}/>
           <MultiCarousel productdata={justdropped}/>

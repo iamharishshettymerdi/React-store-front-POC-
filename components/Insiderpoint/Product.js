@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
     margin:'5px',
     transitionDuration: '10s',
     transform: '0.2s ease 0s',
+    margin: '6px',
     "&:hover $quickmodal":{
       display:'block'
     },

@@ -7,6 +7,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import banner from '../local-json/banner.json'
 const useStyles = makeStyles(theme => ({
     container: {
       display: 'flex',
@@ -36,8 +37,8 @@ const Banner=(pageProps)=>{
     return (
       // onClick={()=>{console.log("Clicked");setdialogenable(true)}}
              <Container maxWidth="xl" className={classes.container} >
-                <div className={classes.span}>Get FREE shipping on all orders when you join Beauty Insider. Exclusions/terms apply.† </div>
-                    <Dialog open={dialogenable} onClose={()=>{"close ";setdialogenable(false)}}>Hello</Dialog>
+                <div className={classes.span}>{banner.text}</div>
+                    {/* <Dialog open={dialogenable} onClose={()=>{"close ";setdialogenable(false)}}>Hello</Dialog> */}
             </Container>
     )          
 }
