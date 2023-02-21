@@ -31,13 +31,17 @@ const useStyles = makeStyles(theme => ({
     padding: '16px',
     borderRadius: '8px',
     maxHeight: '90%',
-    minHeight: '330px',
+    minHeight: '300px',
+    margin:'5px',
     transitionDuration: '10s',
     transform: '0.2s ease 0s',
     margin: '6px',
     "&:hover $quickmodal":{
       display:'block'
-    }
+    },
+    [theme.breakpoints.up('sm')]:{
+     minHeight:"310px",
+    },
   },
   part: {
     display: 'flex',
