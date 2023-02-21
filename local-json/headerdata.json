@@ -4,7 +4,6 @@
         "header":"Stores & services",
         "headerbelowText":"Choose your store",
         "locationicon":"",
-        "Companyname":"Sephora",
         "headermenuoptiontitle":"Happening at sephora",
         "headerMenuOption":[
             {
@@ -34,8 +33,10 @@
         "icon" : "ArrowRight",
         "headerbelowText":"",
         "headermenuoptiontitle":"Community data",
+        "type":"Button",
         "headerMenuOption":[
             {
+                "element":"button",
                 "headersuboption":"Services1",
                 "icon":"https://www.sephora.com/contentimages/meganav/icons/happening_services.jpg",
                 "headersubtext":"Personalized makeup,skincare and brow services "

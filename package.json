@@ -30,6 +30,7 @@
     "@mui/material": "^5.10.16",
     "@svgr/webpack": "^4.3.3",
     "clsx": "^1.0.4",
+    "commerce-sdk": "^2.10.1",
     "cross-env": "^5.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "lorem-ipsum": "^2.0.3",
@@ -43,6 +44,7 @@
     "react-dom": "^17.0.1",
     "react-multi-carousel": "^2.8.2",
     "react-storefront": "^8.17.4",
+    "react-storefront-salesforce-commerce-cloud-connector": "^0.0.2",
     "react-visibility-sensor": "^5.1.1"
   },
   "devDependencies": {

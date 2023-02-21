@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/utils/constants.js"],"names":["COOKIES","USER"],"mappings":"AAAA,OAAO,MAAMA,OAAO,GAAG;AACrBC,EAAAA,IAAI,EAAE;AADe,CAAhB","sourcesContent":["export const COOKIES = {\n  USER: 'sfcc_user',\n}\n"],"file":"constants.js"}

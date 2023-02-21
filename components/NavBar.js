@@ -46,16 +46,18 @@ const useStyles = makeStyles(theme => ({
 }))
 
 function NavBar({ tabs }) {
+  console.log("tabs ",tabs)
+
   const classes = useStyles()
 
   return (
     <Paper square elevation={2} style={{color:'white',backgroundColor:'black'}}>
       <Container maxWidth="lg" className={classes.container}>
         <NavTabs>
-          {category &&
-            category.map(tab => (
+          {tabs &&
+            tabs.map(tab => (
               <NavTab key={tab.as} href={tab.href} as={tab.as} label={tab.text} prefetch="visible" >
-                {tab.items.length>0 && (
+                {tab?.items?.length>0 && (
                   <div className={classes.flexcontainer} >
 
                     <div class={classes.flexitemleft}>
@@ -72,7 +74,7 @@ function NavBar({ tabs }) {
                     </div>
 
                     <div className={classes.flexitemright}>
-                          2
+                          <img src={tab?.image}/>
                     </div>
                   </div>
                 )}
