@@ -55,15 +55,15 @@ async function login() {
   const config = {
     headers: {},
     parameters: {
-      clientId: "a583d1cf-8496-4196-900c-2943cde2853b",
-      organizationId: "f_ecom_zzun_006",
-      shortCode: "kv7kzm78",
-      siteId: "SiteGenesis",
+      clientId: clientId,
+      organizationId:organizationId,
+      shortCode: shortCode,
+      siteId: siteId,
     },
   };
-  const SLAS_CLIENT_ID = "a583d1cf-8496-4196-900c-2943cde2853b";
+  const SLAS_CLIENT_ID = process.env.CLIENT_ID;
 // WARNING: Secret is provided here for convenience only. Do not include secrets in your code!
-const SLAS_CLIENT_SECRET = "9ObowBwtfmBlqkEkob_-sDHEj2dh4VRCmlZWaMgoZMo";
+const SLAS_CLIENT_SECRET = process.env.CLIENT_SECRET;
 // const SLAS_CLIENT_SECRET = process.env.SLAS_CLIENT_SECRET
   const base64Auth = Buffer.from(`${SLAS_CLIENT_ID}:${SLAS_CLIENT_SECRET}`).toString("base64");
   console.log("base64Auth ++ ",base64Auth)

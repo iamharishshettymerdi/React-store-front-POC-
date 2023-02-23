@@ -1,4 +1,4 @@
-import { removeCartItem } from 'react-storefront-connector'
+import { removeCartItem } from '../../../Connector_Files/react-storefront-salesforce-commerce-cloud-connector'
 
 export default async function handler(req, res) {
   const { item } = req.body || {}

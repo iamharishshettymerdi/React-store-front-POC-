@@ -1,4 +1,4 @@
-import { updateCartItem } from 'react-storefront-connector'
+import { updateCartItem } from '../../../Connector_Files/react-storefront-salesforce-commerce-cloud-connector'
 
 export default async function handler(req, res) {
   const { item, quantity } = req.body
