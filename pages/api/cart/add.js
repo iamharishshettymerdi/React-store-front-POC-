@@ -1,4 +1,4 @@
-import { addToCart } from '../../../Connector_Files/react-storefront-salesforce-commerce-cloud-connector'
+import { addToCart } from 'react-storefront-connector'
 
 async function handler(req, res) {
   const result = await addToCart(req.body, req, res)

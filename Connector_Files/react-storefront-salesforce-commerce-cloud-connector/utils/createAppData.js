@@ -8,7 +8,8 @@ export default async function createAppData(req) {
     const tab = {
       text: cat.name,
       as: `/s/${cat.id}`,
-      href: '/s/[...categorySlug]'
+      href: '/s/[...categorySlug]',
+      image:cat.c_slotBannerImage
     };
 
     if (cat.categories) {
