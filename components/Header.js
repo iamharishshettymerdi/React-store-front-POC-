@@ -118,7 +118,7 @@ export default function Header({ menu }) {
         <div  className={classes.classdef}>
 
         {headerdata.map((m,index)=>(
-             <div className="dropdown" onMouseEnter={()=>hoverfunction(index)}>
+             <div className="dropdown" onMouseEnter={()=>hoverfunction(index)} key={index}>
              <div class="dropbtn" style={{display:'flex',cursor:'pointer'}}>
               <div>
                   <StorefrontOutlinedIcon className={classes.icon} />
@@ -155,7 +155,7 @@ export default function Header({ menu }) {
                 <div >
           <b style={{padding: '15px'}}>{headermenuoptiontitle}</b>
           {subdata?.map((n,index)=>(
-             <div style={{display: 'flex'}}>
+             <div style={{display: 'flex'}} key={index}>
              <MenuItem style={{padding:'15px'}}>
              <ListItemText>
               <div style={{display: 'flex',gap:'10px'}}>

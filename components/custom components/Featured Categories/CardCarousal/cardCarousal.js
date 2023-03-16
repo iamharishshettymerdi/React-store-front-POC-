@@ -146,7 +146,7 @@ export default function MultiCarousel(props) {
   return (
     <div className={classes.container}>
       <h2 className={classes.heading}>{productdata.title}</h2>
-      <Carousel  slidesToSlide={6} responsive={responsive}>
+      <Carousel slidesToSlide={6} responsive={responsive}>
         {productdata.productdata.map((product, index) => (
           <div className={classes.card} key={index}>
             {productdata.title === 'Just Dropped' && (
