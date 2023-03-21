@@ -30,6 +30,9 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AddIcon from '@material-ui/icons/Add';
+import Carousel from 'react-storefront/carousel/Carousel'
+import ReactImageMagnify from 'react-image-magnify';
+var productaa = 'https://images.unsplash.com/photo-1526887520775-4b14b8aed897?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
 
 const fetchVariant = fetchLatest(fetch)
 
@@ -106,6 +109,10 @@ const Product = React.memo(lazyProps => {
   const { actions } = useContext(SessionContext)
   const { loading } = state
 
+  console.log("product === ",product)
+  console.log("product.media.thumbnails ",product.media.thumbnails)
+  const [productimages,setproductimage]=useState(product.media.thumbnails)
+  console.log("productimages ",productimages)
   // This is provided when <ForwardThumbnail> is wrapped around product links
   const { thumbnail } = useContext(PWAContext)
 
@@ -158,6 +165,21 @@ const Product = React.memo(lazyProps => {
       })
   }, [color.id, size.id])
 
+  const imageProps = {
+    smallImage: {
+      alt: 'Product Image',
+      isFluidWidth: true,
+      src: productaa,
+      height:400
+    },
+    largeImage: {
+      src: productaa,
+      width: 1200,
+      height: 1800
+    },
+    enlargedImageContainerStyle: { background: '#fff', zIndex: 9 }
+  };
+
   return (
     <>
       <Breadcrumbs items={!loading && state.pageData.breadcrumbs} />
@@ -168,13 +190,39 @@ const Product = React.memo(lazyProps => {
               <Hidden implementation="css" smUp>
                 {header}
               </Hidden>
-              <MediaCarousel
-                className={classes.carousel}
-                lightboxClassName={classes.lightboxCarousel}
-                thumbnail={thumbnail.current}
-                height="100%"
-                media={color.media || (product && product.media)}
-              />
+              {/* <ReactImageMagnify {...imageProps} /> */}
+              <div style={{display:'flex'}}>
+                <div>
+
+                {productimages.map(m=>
+                   <div style={{width: '40.33%',float:'top',}}>
+                      <img src={m.src} alt={m.alt} style={{width:'100%',borderRadius:'50%'}}/>
+                  </div>
+                  )}
+                </div>
+                <div style={{width:'100%'}}>
+                  <MediaCarousel
+                  className={classes.carousel}
+                  lightboxClassName={classes.lightboxCarousel}
+                  thumbnail={thumbnail.current}
+                  height="100%"
+                  media={color.media || (product && product.media)}
+                />
+                </div>
+              </div>
+
+           
+              
+              {/* {
+                product.media.thumbnails.map((m)=>{
+                  <div>
+                    <img src={m.src} style={{width:'100%'}} key={m.src}/>
+                  </div>
+                })
+              } */}
+             
+
+             
             </Grid>
             <Grid item xs={12} sm={6} md={7}>
               <Grid container spacing={4}>
@@ -330,7 +378,6 @@ const Product = React.memo(lazyProps => {
         </AccordionDetails>
       </Accordion>
           </Grid>
-
 
           <Grid item xs={12}>
             <Lazy style={{ minHeight: 285 }}>
