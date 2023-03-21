@@ -88,10 +88,10 @@ const style = {
 
 export default function Form({value,closeForm}) {
     const classes=useStyles()
-    const [open,setOpen]=React.useState(true)
-    const handleClose=()=>{
-        setOpen(false)
-    }
+    // const [open,setOpen]=React.useState(true)
+    // const handleClose=()=>{
+    //     setOpen(false)
+    // }
     const [passwordVisible, setPasswordVisible] =React.useState(false)
   return (
     <>

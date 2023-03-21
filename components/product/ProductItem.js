@@ -1,13 +1,15 @@
 import React, { memo, useState } from 'react'
 import Link from 'react-storefront/link/Link'
 import { Vbox } from 'react-storefront/Box'
-import { Typography } from '@material-ui/core'
+import { Typography, Grid, Box } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Rating from 'react-storefront/Rating'
 import ForwardThumbnail from 'react-storefront/ForwardThumbnail'
 import Image from 'react-storefront/Image'
 import clsx from 'clsx'
 import ProductOptionSelector from 'react-storefront/option/ProductOptionSelector'
+import Form from '../../Common/Form'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,6 +17,8 @@ const useStyles = makeStyles(theme => ({
   },
   thumbnail: {
     marginBottom: theme.spacing(1),
+    zIndex: -1,
+    objectFit: 'contain',
   },
   link: {
     textDecoration: 'none',
@@ -22,6 +26,8 @@ const useStyles = makeStyles(theme => ({
   },
   price: {
     marginTop: '5px',
+    fontFamily: 'bold',
+    fontWeight: '400',
   },
   reviews: {
     marginTop: '5px',
@@ -34,12 +40,15 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function ProductItem({ product, index, classes, className, colorSelector }) {
+function ProductItem({ product, index, classes, className, colorSelector, shortKey = false }) {
   classes = useStyles({ classes })
   const [store, updateStore] = useState(product)
-
+  const [formbutton, setFormbutton] = React.useState(false)
+  const closeForm = () => {
+    setFormbutton(state => !state)
+  }
   return (
-    <div id={`item-${index}`} className={clsx(className, classes.root)}>
+    <div id={`item-${index}`} className={clsx(className, classes.root)} style={{ width: '170px' }}>
       <Vbox alignItems="stretch">
         <ForwardThumbnail>
           <Link
@@ -49,7 +58,38 @@ function ProductItem({ product, index, classes, className, colorSelector }) {
             prefetch="visible"
             pageData={{ product, color: store.color }}
           >
-            <a>
+            <a style={{ position: 'relative' }}>
+              {shortKey && (
+                <>
+                  <Grid
+                    style={{
+                      display: 'grid',
+                      justifyContent: 'start',
+                      position: 'absolute',
+                      top: '2px',
+                      left: '0',
+                      gap: '.2em',
+                      padding: '.2em',
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: 'white',
+                        backgroundColor: 'black',
+                        borderRadius: '4px',
+                        padding: '.2em .3em',
+                        fontSize: '.725em',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.02em',
+                        lineHeight: '1.3',
+                      }}
+                    >
+                      New arrival
+                    </span>
+                  </Grid>
+                </>
+              )}
+              <Form value={formbutton} closeForm={closeForm} />
               <Image
                 className={classes.thumbnail}
                 src={
@@ -83,9 +123,30 @@ function ProductItem({ product, index, classes, className, colorSelector }) {
             />
           )}
           <Rating product={product} className={classes.rating} />
-          <Typography className={classes.price}>{product.price}</Typography>
+          <Typography className={classes.price}>${product.price}</Typography>
         </div>
       </Vbox>
+      {shortKey && (
+        <Grid>
+          <button
+            style={{
+              position: 'absolute',
+              top: '15px',
+              right: '1px',
+              backgroundColor: 'transparent',
+              border: 'none',
+            }}
+            onClick={closeForm}
+          >
+            <FavoriteIcon
+              style={{
+                width: '1em',
+                cursor: 'pointer',
+              }}
+            />
+          </button>
+        </Grid>
+      )}
     </div>
   )
 }

@@ -32,15 +32,15 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '8px',
     maxHeight: '90%',
     minHeight: '300px',
-    margin:'5px',
+    margin: '5px',
     transitionDuration: '10s',
     transform: '0.2s ease 0s',
     margin: '6px',
-    "&:hover $quickmodal":{
-      display:'block'
+    '&:hover $quickmodal': {
+      display: 'block',
     },
-    [theme.breakpoints.up('sm')]:{
-     minHeight:"310px",
+    [theme.breakpoints.up('sm')]: {
+      minHeight: '310px',
     },
   },
   part: {
@@ -105,14 +105,14 @@ const useStyles = makeStyles(theme => ({
 export default function Product({ name, url, point, description, productimage, id }) {
   const classes = useStyles()
   const [value, setValue] = React.useState(false)
-  const [form,setForm]=React.useState(false)
+  const [form, setForm] = React.useState(false)
   const details = { name, point, description, productimage, id }
   const closeModal = () => {
-    setValue(state =>!state)
+    setValue(state => !state)
   }
-  
-  const closeForm = ()=>{
-    setForm(state=> !state)
+
+  const closeForm = () => {
+    setForm(state => !state)
   }
   return (
     <Main className={classes.card}>
@@ -122,10 +122,15 @@ export default function Product({ name, url, point, description, productimage, i
             <div style={{ position: 'relative', display: 'block' }}>
               <img className={classes.productImage} src={url} alt="product image" />
               <div style={{ position: 'absolute', bottom: '0', width: '100%' }}>
-                <Button className={classes.quickmodal} onClick={()=>setValue(true)}>
+                <Button className={classes.quickmodal} onClick={() => setValue(true)}>
                   QuickLook
                 </Button>
-                 <QuicklookModal details={details} open={value} closeModal={closeModal} style={{ padding: '0', width: '100%'}}/>
+                <QuicklookModal
+                  details={details}
+                  open={value}
+                  closeModal={closeModal}
+                  style={{ padding: '0', width: '100%' }}
+                />
               </div>
             </div>
           </div>
@@ -155,11 +160,11 @@ export default function Product({ name, url, point, description, productimage, i
                 textTransform: 'none',
               }}
               variant="outlined"
-             onClick={()=>setForm(true)}
+              onClick={() => setForm(true)}
             >
               Sign in to Access
-            </Button >
-            <Form value={form} closeForm={closeForm}/>
+            </Button>
+            <Form value={form} closeForm={closeForm} />
           </div>
         </div>
       </div>

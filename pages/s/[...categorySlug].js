@@ -19,7 +19,6 @@ import SortButton from 'react-storefront/plp/SortButton'
 import Fill from 'react-storefront/Fill'
 import fetchFromAPI from 'react-storefront/props/fetchFromAPI'
 import createLazyProps from 'react-storefront/props/createLazyProps'
-
 const useStyles = makeStyles(theme => ({
   sideBar: {
     margin: theme.spacing(0, 4, 0, 0),
@@ -41,6 +40,7 @@ const Subcategory = lazyProps => {
   const theme = useTheme()
   let { pageData, loading } = store
 
+ 
   if (pageData.isLanding) {
     return (
       <>
@@ -71,7 +71,7 @@ const Subcategory = lazyProps => {
   const queryForState = useCallback(state => {
     const { filters, page, sort } = state
     const query = {}
-
+    console.log(query)
     for (let filter of filters) {
       const [name, value] = filter.split(':')
 
@@ -101,7 +101,6 @@ const Subcategory = lazyProps => {
     }
 
     console.log('query', query)
-
     return query
   }, [])
 
@@ -163,7 +162,9 @@ const Subcategory = lazyProps => {
                 {!loading ? (
                   <ResponsiveTiles autoScrollToNewTiles>
                     {pageData.products.map((product, i) => (
-                      <ProductItem key={product.id} product={product} index={i} />
+                      <>
+                        <ProductItem key={product.id} product={product} index={i} shortKey="true" />
+                      </>
                     ))}
                   </ResponsiveTiles>
                 ) : (
